@@ -2,8 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-
-
+        <variable
+            name="model"
+            type="profoodies.com.profoodies.login.model.UserLogin"/>
+        <variable
+            name="Controller"
+            type="profoodies.com.profoodies.login.viewmodel.LoginController"/>
     </data>
 
     <ScrollView
@@ -52,6 +56,7 @@
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:hint="@string/enter_your_email"
+                    android:text="@={model.username}"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:paddingLeft="5dp"
@@ -96,6 +101,7 @@
                     android:background="@android:color/transparent"
                     android:fontFamily="sans-serif"
                     android:hint="@string/enter_your_password"
+                    android:text="@={model.password}"
                     android:inputType="textPassword"
                     android:paddingLeft="5dp"
                     android:maxLines="1"
@@ -114,6 +120,7 @@
                 android:layout_marginRight="50dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button_rounded_corner_border"
+                android:onClick="@{Controller.btnLoginClick(model)}"
                 android:text="@string/login"
                 android:textColor="@android:color/white"
                 android:textSize="16sp" />

@@ -11,6 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 
 import profoodies.com.profoodies.R;
 import profoodies.com.profoodies.databinding.ActivityLoginBinding;
+import profoodies.com.profoodies.login.model.UserLogin;
+import profoodies.com.profoodies.login.viewmodel.LoginController;
 
 
 /**
@@ -25,5 +27,7 @@ public class ActivityLogin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityLoginBinding activityLoginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login);
+        activityLoginBinding.setController(new LoginController());
+        activityLoginBinding.setModel(new UserLogin());
     }
 }

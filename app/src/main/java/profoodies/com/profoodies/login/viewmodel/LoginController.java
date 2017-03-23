@@ -5,6 +5,16 @@
  */
 package profoodies.com.profoodies.login.viewmodel;
 
+import android.content.Context;
+import android.text.TextUtils;
+import android.util.Patterns;
+import android.view.View;
+import android.widget.Toast;
+
+import profoodies.com.profoodies.R;
+import profoodies.com.profoodies.login.model.UserLogin;
+import profoodies.com.profoodies.utils.CustomUtils;
+
 /**
  * Controller for LoginActivity Class
  * XML View Controller
@@ -13,4 +23,47 @@ package profoodies.com.profoodies.login.viewmodel;
  * @version 1.0
  */
 public class LoginController {
+
+    Context context;
+
+    /**
+     * OnClick listener of login button.
+     *
+     * @param userLogin Used to get the login details.
+     * @return OnClickListener of the login button.
+     */
+    public View.OnClickListener btnLoginClick(final UserLogin userLogin) {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context = view.getContext();
+                if (isValid(view, userLogin.getUsername(), userLogin.getPassword())){
+                    CustomUtils.showSnack(view,"Form Validated");
+                }
+            }
+        };
+    }
+
+    /**
+     * Method used to validate the username and password.
+     *
+     * @param view  Used to show the Snack Bar
+     * @param userEmail Validate the userEmail.
+     * @param password Validate the password.
+     * @return true when the given field is not empty.
+     */
+    private boolean isValid(View view, String userEmail, String password) {
+        boolean validationStatus = true;
+        if (TextUtils.isEmpty(userEmail) || TextUtils.isEmpty(password)) {
+            validationStatus = false;
+            CustomUtils.showSnack(view,"Please make sure username and password field should not be empty");
+        }  else if (!Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()) {
+            validationStatus = false;
+            CustomUtils.showSnack(view,"Please make sure email id is valid");
+        }else if (password.length() < 6) {
+            validationStatus = false;
+            CustomUtils.showSnack(view,"Please make sure password should have max of 6 character");
+        }
+        return validationStatus;
+    }
 }
