@@ -9,9 +9,6 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
-import android.widget.Toast;
-
-import profoodies.com.profoodies.R;
 import profoodies.com.profoodies.login.model.UserLogin;
 import profoodies.com.profoodies.utils.CustomUtils;
 
@@ -24,7 +21,7 @@ import profoodies.com.profoodies.utils.CustomUtils;
  */
 public class LoginController {
 
-    Context context;
+    private Context context;
 
     /**
      * OnClick listener of login button.
