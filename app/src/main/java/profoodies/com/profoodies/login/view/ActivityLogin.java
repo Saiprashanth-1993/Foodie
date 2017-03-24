@@ -27,7 +27,7 @@ public class ActivityLogin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityLoginBinding activityLoginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login);
-        activityLoginBinding.setController(new LoginController());
         activityLoginBinding.setModel(new UserLogin());
+        activityLoginBinding.setController(new LoginController());
     }
 }

@@ -6,10 +6,15 @@
 package profoodies.com.profoodies.login.viewmodel;
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
+
+import profoodies.com.profoodies.MainActivity;
+import profoodies.com.profoodies.R;
 import profoodies.com.profoodies.login.model.UserLogin;
+import profoodies.com.profoodies.login.view.ActivityLogin;
 import profoodies.com.profoodies.utils.CustomUtils;
 
 /**
@@ -36,6 +41,10 @@ public class LoginController {
                 context = view.getContext();
                 if (isValid(view, userLogin.getUsername(), userLogin.getPassword())){
                     CustomUtils.showSnack(view,"Form Validated");
+                    Intent myIntent = new Intent(context, MainActivity.class);
+                    myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    context.startActivity(myIntent);
+                    ((ActivityLogin)context).overridePendingTransition(R.animator.left_out, R.animator.right_in);
                 }
             }
         };
@@ -53,7 +62,7 @@ public class LoginController {
         boolean validationStatus = true;
         if (TextUtils.isEmpty(userEmail) || TextUtils.isEmpty(password)) {
             validationStatus = false;
-            CustomUtils.showSnack(view,"Please make sure username and password field should not be empty");
+            CustomUtils.showToast(context,"Please make sure username and password field should not be empty");
         }  else if (!Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()) {
             validationStatus = false;
             CustomUtils.showSnack(view,"Please make sure email id is valid");
