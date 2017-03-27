@@ -10,4 +10,6 @@
     <color name="textViewColor">#333333</color>
     <color name="white">#fff</color>
     <color name="colorSecondaryColor">#F14D3D</color>
+    <color name="navigationBackground">#393939</color>
+    <color name="navigation_highlight_color">#ED4E42</color>
 </resources>

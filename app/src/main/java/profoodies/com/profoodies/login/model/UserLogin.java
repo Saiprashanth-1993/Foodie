@@ -50,4 +50,14 @@ public class UserLogin extends BaseObservable {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    /**
+     * Method to get the warning messae
+     *
+     * @return to show the info message in login username
+     */
+    public String getNameError(){
+        return "Only Instagram Users are allowed";
+    }
+
 }

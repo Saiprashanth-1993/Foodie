@@ -11,10 +11,8 @@ import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 
-import profoodies.com.profoodies.MainActivity;
-import profoodies.com.profoodies.R;
+import profoodies.com.profoodies.home.view.HomeActivity;
 import profoodies.com.profoodies.login.model.UserLogin;
-import profoodies.com.profoodies.login.view.ActivityLogin;
 import profoodies.com.profoodies.utils.CustomUtils;
 
 /**
@@ -41,10 +39,8 @@ public class LoginController {
                 context = view.getContext();
                 if (isValid(view, userLogin.getUsername(), userLogin.getPassword())){
                     CustomUtils.showSnack(view,"Form Validated");
-                    Intent myIntent = new Intent(context, MainActivity.class);
-                    myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    Intent myIntent = new Intent(context, HomeActivity.class);
                     context.startActivity(myIntent);
-                    ((ActivityLogin)context).overridePendingTransition(R.animator.left_out, R.animator.right_in);
                 }
             }
         };
