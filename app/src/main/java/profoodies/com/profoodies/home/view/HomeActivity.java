@@ -1,5 +1,9 @@
+/**
+ * @category ProFoodies
+ * @copyright Copyright (C) 2017 Contus. All rights reserved.
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ */
 package profoodies.com.profoodies.home.view;
-
 
 import android.databinding.DataBindingUtil;
 import android.graphics.Color;
@@ -25,6 +29,8 @@ import profoodies.com.profoodies.home.like.view.LikeFragment;
 import profoodies.com.profoodies.utils.Constants;
 
 /**
+ * Activity to display the Home, Likes & follow tabs and navigation controller which is used to display the details
+ *
  * @author ContusTeam <developers@contus.in>
  * @version 1.0
  */

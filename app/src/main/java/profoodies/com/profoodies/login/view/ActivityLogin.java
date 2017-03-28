@@ -1,5 +1,5 @@
 /**
- * @category FoodLover
+ * @category ProFoodies
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
  */
@@ -28,19 +28,20 @@ import profoodies.com.profoodies.login.viewmodel.LoginController;
 public class ActivityLogin extends AppCompatActivity {
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityLoginBinding activityLoginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login);
+        /**
+         *  To initialize the Model and controller in mvvm
+         */
         activityLoginBinding.setModel(new UserLogin());
         activityLoginBinding.setController(new LoginController());
 
         /**
-         * The login screen app image
+         * to get the view from screen and passing that to animation
          */
-        RelativeLayout loginView;
-        loginView = (RelativeLayout) activityLoginBinding.rlLogin;
+        RelativeLayout loginView = activityLoginBinding.rlLogin;
         startAnimation(loginView);
     }
 
@@ -49,8 +50,7 @@ public class ActivityLogin extends AppCompatActivity {
      *
      * @param view To get the view and start animation in that
      */
-    public void startAnimation(View view)
-    {
+    public void startAnimation(View view) {
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom);
         view.startAnimation(animation);
     }
