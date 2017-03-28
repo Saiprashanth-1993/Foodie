@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-    </data>
+    <data></data>
 
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer_layout"
@@ -13,37 +12,25 @@
         android:fitsSystemWindows="true"
         tools:openDrawer="start">
 
-        <android.support.design.widget.CoordinatorLayout
-            android:id="@+id/coordinator_layout"
+        <LinearLayout
+            android:id="@+id/parent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
             android:background="@drawable/app_background"
-            tools:context=".login.view.ActivityLogin">
+            android:orientation="vertical">
 
-            <LinearLayout
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent" />
 
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
 
-                    android:layout_height="?attr/actionBarSize"
-                    android:background="@android:color/transparent"
-                    app:layout_scrollFlags="scroll|enterAlways"
-                    app:popupTheme="@style/AppTheme.PopupOverlay">
-                </android.support.v7.widget.Toolbar>
-
-                <FrameLayout
-                    android:id="@+id/fl_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-            </LinearLayout>
-        </android.support.design.widget.CoordinatorLayout>
+            <FrameLayout
+                android:id="@+id/fl_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
 
         <android.support.design.widget.NavigationView
             android:id="@+id/navigation_view"
@@ -52,11 +39,11 @@
             android:layout_gravity="start"
             android:background="@color/navigationBackground"
             android:fitsSystemWindows="true"
+            android:visibility="gone"
             app:headerLayout="@layout/navigation_header"
-            app:itemTextColor="@drawable/navigation_item_selected"
             app:itemIconTint="@drawable/navigation_item_selected"
+            app:itemTextColor="@drawable/navigation_item_selected"
             app:menu="@menu/activity_home_drawer"
-            app:theme="@style/appNavigation.NavigationDrawer"
-             />
+            app:theme="@style/appNavigation.NavigationDrawer" />
     </android.support.v4.widget.DrawerLayout>
 </layout>

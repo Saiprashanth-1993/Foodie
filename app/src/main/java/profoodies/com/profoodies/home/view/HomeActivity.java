@@ -16,6 +16,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import profoodies.com.profoodies.GetCoins;
 import profoodies.com.profoodies.R;
@@ -43,7 +44,7 @@ public class HomeActivity extends AppCompatActivity
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, activityHomeBinding.drawerLayout,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
-            CoordinatorLayout coordinatorLayout = activityHomeBinding.coordinatorLayout;
+            LinearLayout coordinatorLayout = activityHomeBinding.parent;
 
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset) {
@@ -112,7 +113,7 @@ public class HomeActivity extends AppCompatActivity
         String fragmentName = null;
 
         if (itemId == R.id.nav_getcoins) {
-            fragment = new LikeFragment();
+            fragment = new HomepageFragment();
             fragmentName = Constants.NAME_NAVIGATION_GET_COINS;
         } else if (itemId == R.id.nav_promotions) {
             fragment = new GetCoins();
