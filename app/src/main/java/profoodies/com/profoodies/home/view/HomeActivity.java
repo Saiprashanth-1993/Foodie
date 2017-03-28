@@ -3,7 +3,6 @@ package profoodies.com.profoodies.home.view;
 
 import android.databinding.DataBindingUtil;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,11 +14,8 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.DisplayMetrics;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-
 
 import profoodies.com.profoodies.GetCoins;
 import profoodies.com.profoodies.R;
@@ -35,24 +31,23 @@ public class HomeActivity extends AppCompatActivity
 
     ActivityHomeBinding activityHomeBinding;
 
-    private float lastTranslate = 0.0f;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        activityHomeBinding = DataBindingUtil.setContentView(this,R.layout.activity_home);
+        activityHomeBinding = DataBindingUtil.setContentView(this, R.layout.activity_home);
 
         setSupportActionBar(activityHomeBinding.toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,activityHomeBinding.drawerLayout,
-                R.string.navigation_drawer_open,R.string.navigation_drawer_close)
-        {
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, activityHomeBinding.drawerLayout,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
             CoordinatorLayout coordinatorLayout = activityHomeBinding.coordinatorLayout;
+
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset) {
                 super.onDrawerSlide(drawerView, slideOffset);
-                float moveFactor = (drawerView.getWidth() * slideOffset);
+                float moveFactor = drawerView.getWidth() * slideOffset;
                 coordinatorLayout.setTranslationX(moveFactor);
             }
         };
@@ -63,15 +58,8 @@ public class HomeActivity extends AppCompatActivity
 
         toggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-   /*     DisplayMetrics dm = new DisplayMetrics();
-        this.getWindow().getWindowManager().getDefaultDisplay().getMetrics(dm);
-        int width = dm.widthPixels / 2;
-
-        DrawerLayout.LayoutParams params =  (android.support.v4.widget.DrawerLayout.LayoutParams) activityHomeBinding.drawerLayout.getLayoutParams();
-        params.width = 300;
-        activityHomeBinding.drawerLayout.setLayoutParams(params);*/
-
+        toggle.setDrawerIndicatorEnabled(false);
+        toggle.setHomeAsUpIndicator(R.drawable.ic_harmburger);
 
         /**
          *  Trigger the listener for navigation drawer
@@ -79,9 +67,9 @@ public class HomeActivity extends AppCompatActivity
         toggle.setToolbarNavigationClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(activityHomeBinding.drawerLayout.isDrawerOpen(GravityCompat.START)){
+                if (activityHomeBinding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
                     activityHomeBinding.drawerLayout.closeDrawer(GravityCompat.START);
-                }else{
+                } else {
                     activityHomeBinding.drawerLayout.openDrawer(GravityCompat.START);
                 }
             }
@@ -137,7 +125,7 @@ public class HomeActivity extends AppCompatActivity
     public void onBackPressed() {
         if (activityHomeBinding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
             activityHomeBinding.drawerLayout.closeDrawer(GravityCompat.START);
-        }else {
+        } else {
             /**
              * Let super handle the back press
              */

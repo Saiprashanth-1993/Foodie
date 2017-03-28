@@ -51,8 +51,8 @@
             android:background="@color/navigationBackground"
             android:fitsSystemWindows="true"
             app:headerLayout="@layout/navigation_header"
-            app:itemTextColor="@android:color/white"
-            app:itemIconTint="@color/white"
+            app:itemTextColor="@drawable/navigation_item_selected"
+            app:itemIconTint="@drawable/navigation_item_selected"
             app:menu="@menu/activity_home_drawer"
             app:theme="@style/appNavigation.NavigationDrawer"
              />
