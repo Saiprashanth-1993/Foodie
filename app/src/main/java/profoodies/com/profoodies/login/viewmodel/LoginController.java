@@ -54,11 +54,14 @@ public class LoginController {
      * @param password Validate the password.
      * @return true when the given field is not empty.
      */
-    private boolean isValid(View view, String userEmail, String password) {
+    public boolean isValid(View view, String userEmail, String password) {
         boolean validationStatus = true;
-        if (TextUtils.isEmpty(userEmail) || TextUtils.isEmpty(password)) {
+        if (TextUtils.isEmpty(userEmail)) {
             validationStatus = false;
-            CustomUtils.showToast(context,"Please make sure username and password field should not be empty");
+            CustomUtils.showSnack(view,"Please make sure usernamefield should not be empty");
+        } else if (TextUtils.isEmpty(password)) {
+            validationStatus = false;
+            CustomUtils.showSnack(view,"Please make sure password field should not be empty");
         }  else if (!Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()) {
             validationStatus = false;
             CustomUtils.showSnack(view,"Please make sure email id is valid");

@@ -1,9 +1,8 @@
-/*
+/**
  * @category ProFoodies
- * @copyright Copyright (C) 2016 Contus. All rights reserved.
+ * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
  */
-
 package profoodies.com.profoodies.utils;
 
 import android.content.Context;
@@ -26,21 +25,14 @@ public class CustomUtils {
     }
 
     /**
-     * Show the toast message
+     * show the snackbar
      *
-     * @param context Instance of the activity
-     * @param message    Message to show in toast
+     * @param view View of the activity or fragment
+     * @param message Message to show in Snack bar
      */
-    public static void showToast(Context context, String message) {
-        Toast toast = Toast.makeText(context, message, Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.CENTER, 0, 0);
-        toast.show();
-    }
-
     public static void showSnack(View view, String message){
         Snackbar snackbar = Snackbar
                 .make(view,message,Snackbar.LENGTH_LONG);
-
         snackbar.show();
     }
 }
