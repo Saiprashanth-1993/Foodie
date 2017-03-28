@@ -20,6 +20,7 @@ import android.view.View;
 import profoodies.com.profoodies.GetCoins;
 import profoodies.com.profoodies.R;
 import profoodies.com.profoodies.databinding.ActivityHomeBinding;
+import profoodies.com.profoodies.home.like.view.LikeFragment;
 import profoodies.com.profoodies.utils.Constants;
 
 /**
@@ -110,7 +111,7 @@ public class HomeActivity extends AppCompatActivity
         String fragmentName = null;
 
         if (itemId == R.id.nav_getcoins) {
-            fragment = new GetCoins();
+            fragment = new LikeFragment();
             fragmentName = Constants.NAME_NAVIGATION_GET_COINS;
         } else if (itemId == R.id.nav_promotions) {
             fragment = new GetCoins();
