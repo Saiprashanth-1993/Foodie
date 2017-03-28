@@ -4,19 +4,19 @@
 
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="180dp">
+    android:layout_height="160dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:gravity="center">
         <ImageView
             android:id="@+id/iv_navigation_header_profile"
             android:layout_marginTop="20dp"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:src="@drawable/ic_person" />
         <TextView
             android:layout_width="match_parent"
@@ -24,7 +24,7 @@
             android:id="@+id/tv_navigation_username"
             android:text="Keerthivasan"
             android:layout_marginTop="10dp"
-            android:paddingBottom="10dp"
+            android:paddingBottom="20dp"
             android:textSize="18sp"
             android:textAlignment="center"
             android:textColor="@android:color/white"
@@ -34,7 +34,7 @@
             android:layout_height="0.1dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:background="@color/white"
+            android:background="@color/navigation_header_border"
             />
     </LinearLayout>
 </RelativeLayout>

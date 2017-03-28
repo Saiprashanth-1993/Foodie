@@ -61,6 +61,7 @@ public class HomeActivity extends AppCompatActivity
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toggle.setDrawerIndicatorEnabled(false);
         toggle.setHomeAsUpIndicator(R.drawable.ic_harmburger);
+        activityHomeBinding.toolbar.setTitleTextColor(Color.WHITE);
 
         /**
          *  Trigger the listener for navigation drawer
@@ -82,10 +83,10 @@ public class HomeActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                activityHomeBinding.drawerLayout.openDrawer(GravityCompat.START);
-                return true;
+        int i = item.getItemId();
+        if (i == android.R.id.home) {
+            activityHomeBinding.drawerLayout.openDrawer(GravityCompat.START);
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
