@@ -4,22 +4,18 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import profoodies.com.profoodies.R;
 import profoodies.com.profoodies.databinding.FragmentHomepageBinding;
 import profoodies.com.profoodies.home.follow.view.FollowFragment;
 import profoodies.com.profoodies.home.like.view.LikeFragment;
 
 
-public class HomepageFragment extends Fragment implements ViewPager.OnPageChangeListener {
+public class HomepageFragment extends Fragment  {
 
 
     private FragmentHomepageBinding homepageBinding;
@@ -51,7 +47,6 @@ public class HomepageFragment extends Fragment implements ViewPager.OnPageChange
         mAdapter.setFragmentList(getFragmentList());
         homepageBinding.viewpager.setAdapter(mAdapter);
         homepageBinding.tabs.setupWithViewPager(homepageBinding.viewpager);
-        homepageBinding.viewpager.addOnPageChangeListener(this);
     }
 
 
@@ -68,20 +63,4 @@ public class HomepageFragment extends Fragment implements ViewPager.OnPageChange
         return fragmentList;
     }
 
-    @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-
-    }
-
-    @Override
-    public void onPageSelected(int position) {
-
-    }
-
-    @Override
-    public void onPageScrollStateChanged(int state) {
-
-
-    }
 }
