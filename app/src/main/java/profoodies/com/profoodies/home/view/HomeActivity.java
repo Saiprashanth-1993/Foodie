@@ -75,8 +75,18 @@ public class HomeActivity extends AppCompatActivity
             }
         });
 
-        displaySelectedScreen(R.id.nav_getcoins);
+        onNavigationItemSelected(activityHomeBinding.navigationView.getMenu().getItem(0));
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                activityHomeBinding.drawerLayout.openDrawer(GravityCompat.START);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
