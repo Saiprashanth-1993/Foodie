@@ -4,12 +4,8 @@
  * @license http://www.apache.org/licenses/LICENSE-2.0
  */
 package profoodies.com.profoodies.utils;
-
-import android.content.Context;
 import android.support.design.widget.Snackbar;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.Toast;
 
 /**
  * Common utils used for the application

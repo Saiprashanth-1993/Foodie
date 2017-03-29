@@ -14,7 +14,6 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -35,6 +34,9 @@ import profoodies.com.profoodies.utils.Constants;
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    /**
+     * Activity Home Binding for initializing the layout as data binding.
+     */
     ActivityHomeBinding activityHomeBinding;
 
 
@@ -57,17 +59,17 @@ public class HomeActivity extends AppCompatActivity
                 coordinatorLayout.setTranslationX(moveFactor);
             }
         };
-        activityHomeBinding.drawerLayout.setScrimColor(Color.TRANSPARENT);
+
         activityHomeBinding.drawerLayout.addDrawerListener(toggle);
-        toggle.setDrawerIndicatorEnabled(true);
         activityHomeBinding.navigationView.setNavigationItemSelectedListener(this);
 
         toggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toggle.setDrawerIndicatorEnabled(false);
         toggle.setHomeAsUpIndicator(R.drawable.ic_harmburger);
-        activityHomeBinding.toolbar.setTitleTextColor(Color.WHITE);
 
+        activityHomeBinding.toolbar.setTitleTextColor(Color.WHITE);
+        activityHomeBinding.drawerLayout.setScrimColor(Color.TRANSPARENT);
         /**
          *  Trigger the listener for navigation drawer
          */
@@ -88,6 +90,10 @@ public class HomeActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        /**
+         *Handle action bar item clicks here. The action bar will automatically handle clicks on the Home/Up button, so long as you specify a parent activity in AndroidManifest.xml.
+         */
         int i = item.getItemId();
         if (i == android.R.id.home) {
             activityHomeBinding.drawerLayout.openDrawer(GravityCompat.START);
@@ -134,10 +140,16 @@ public class HomeActivity extends AppCompatActivity
             fragmentManager.beginTransaction().add(R.id.fl_container, fragment)
                     .addToBackStack(fragmentName).commit();
         }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+
+        /**
+         * close the navigation view after loaded the fragment
+         */
+        activityHomeBinding.drawerLayout.closeDrawer(GravityCompat.START);
     }
 
+    /**
+     * Method used for handle onBackPressed.
+     */
     @Override
     public void onBackPressed() {
         if (activityHomeBinding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
