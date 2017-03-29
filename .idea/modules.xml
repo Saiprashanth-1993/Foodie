@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MSVE4262-food-lover-app-adam-schihab-and.iml" filepath="$PROJECT_DIR$/MSVE4262-food-lover-app-adam-schihab-and.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ProFoodies.iml" filepath="$PROJECT_DIR$/ProFoodies.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

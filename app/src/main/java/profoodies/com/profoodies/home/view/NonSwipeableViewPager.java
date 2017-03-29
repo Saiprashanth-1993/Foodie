@@ -3,6 +3,7 @@ package profoodies.com.profoodies.home.view;
 import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Scroller;
@@ -46,7 +47,7 @@ public class NonSwipeableViewPager extends ViewPager {
             scroller.setAccessible(true);
             scroller.set(this, new MyScroller(getContext()));
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("TAG", "setMyScroller: " +e );
         }
     }
 
