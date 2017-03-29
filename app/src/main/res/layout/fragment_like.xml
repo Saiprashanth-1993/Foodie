@@ -2,12 +2,21 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data />
+    <data>
+        <variable
+            name="LikeInfo"
+            type="profoodies.com.profoodies.home.like.model.LikeModel"/>
+
+        <variable
+            name="viewController"
+            type="profoodies.com.profoodies.home.viewmodel.HomePageController"/>
+
+    </data>
 
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        style="@style/AppTheme.NoActionBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        style="@style/AppTheme.NoActionBar"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -20,7 +29,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="152dp"
+                android:layout_centerHorizontal="true"
                 android:contentDescription="@null"
                 android:src="@drawable/user_img"
                 app:civ_border_color="@android:color/white"
@@ -31,7 +40,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/imageView"
-                android:layout_marginLeft="115dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dp"
                 android:layout_marginTop="5dp"
                 android:text="Chef Mark Edmond"
                 android:textColor="@android:color/white" />
@@ -40,9 +50,8 @@
                 android:id="@+id/card"
                 android:layout_width="345dp"
                 android:layout_height="348dp"
-                android:layout_alignTop="@+id/name"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="26dp"
+                android:layout_marginTop="90dp"
                 android:clickable="true"
                 android:elevation="10dp"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -51,8 +60,8 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:background="@android:color/white"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white">
 
                     <android.support.v7.widget.AppCompatImageView
                         android:id="@+id/burger"
@@ -108,15 +117,16 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/heart"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_below="@+id/card"
-                android:layout_marginLeft="152dp"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="8dp"
                 android:clickable="true"
                 android:contentDescription="@null"
                 android:foreground="?attr/selectableItemBackground"
-                android:src="@drawable/heart_round"
+                android:onClick="@{viewController.FavbtnClick(LikeInfo)}"
+                android:src="@{LikeInfo.toEditOrSave ? @drawable/heart_round_pink : @drawable/heart_round}"
                 app:civ_border_color="@android:color/white"
                 app:civ_border_width="0dp" />
 

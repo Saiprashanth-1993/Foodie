@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+
 import profoodies.com.profoodies.R;
 
 /**
@@ -31,7 +32,7 @@ public class CustomAdapter extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return false;
+        return view==object;
     }
 
     @Override
@@ -49,4 +50,6 @@ public class CustomAdapter extends PagerAdapter {
     public int getItemPosition(Object object) {
         return POSITION_NONE;
     }
+
+
 }

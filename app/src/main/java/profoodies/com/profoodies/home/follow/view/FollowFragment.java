@@ -31,6 +31,7 @@ public class FollowFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ViewPager pager=(ViewPager)view.findViewById(R.id.pager);
+        pager.setAdapter(new CustomAdapter(getContext()));
         CustomAdapter customAdapter=new CustomAdapter(getContext());
         pager.setAdapter(customAdapter);
     }

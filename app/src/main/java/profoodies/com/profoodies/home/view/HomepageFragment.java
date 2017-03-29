@@ -7,8 +7,10 @@ import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import profoodies.com.profoodies.R;
 import profoodies.com.profoodies.databinding.FragmentHomepageBinding;
 import profoodies.com.profoodies.home.follow.view.FollowFragment;
@@ -19,6 +21,8 @@ public class HomepageFragment extends Fragment  {
 
 
     private FragmentHomepageBinding homepageBinding;
+
+
 
     public HomepageFragment() {
         // Required empty public constructor
@@ -33,7 +37,10 @@ public class HomepageFragment extends Fragment  {
         setTabs();
         setHasOptionsMenu(true);
         return homepageBinding.getRoot();
+
     }
+
+
 
 
     /**
