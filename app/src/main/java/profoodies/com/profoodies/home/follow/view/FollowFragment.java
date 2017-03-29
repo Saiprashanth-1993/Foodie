@@ -14,10 +14,13 @@ import profoodies.com.profoodies.databinding.FragmentFollowBinding;
 import profoodies.com.profoodies.home.follow.model.FollowModel;
 import profoodies.com.profoodies.home.viewmodel.CustomAdapter;
 import profoodies.com.profoodies.home.viewmodel.HomePageController;
+import xyz.hanks.library.SmallBang;
 
 public class FollowFragment extends Fragment {
 
     FragmentFollowBinding fragmentFollowBinding;
+    SmallBang smallBang;
+
 
     public FollowFragment() {
         // Required empty public constructor
@@ -29,13 +32,14 @@ public class FollowFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         fragmentFollowBinding = DataBindingUtil.inflate(inflater,   R.layout.fragment_follow, container, false);
+        smallBang = SmallBang.attach2Window(getActivity());
         return fragmentFollowBinding.getRoot();
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        fragmentFollowBinding.setViewController(new HomePageController());
+        fragmentFollowBinding.setViewController(new HomePageController(smallBang));
         fragmentFollowBinding.setFollowInfo(new FollowModel());
         ViewPager pager=(ViewPager)view.findViewById(R.id.pager);
         pager.setAdapter(new CustomAdapter(getContext()));

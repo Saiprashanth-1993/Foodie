@@ -35,6 +35,7 @@ public class HomePageController {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                smallBang.bang(view);
                 fModel.setToEditOrSave(true);
             }
         };
