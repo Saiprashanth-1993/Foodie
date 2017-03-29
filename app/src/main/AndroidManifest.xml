@@ -11,8 +11,13 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".SplashScreenActivity"
+            android:screenOrientation="fullUser"
             android:theme="@style/SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".login.view.ActivityLogin"
@@ -21,12 +26,7 @@
             android:name=".home.view.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
-
 </manifest>

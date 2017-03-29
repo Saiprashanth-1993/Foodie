@@ -11,7 +11,6 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-
 import profoodies.com.profoodies.login.view.ActivityLogin;
 
 /**
@@ -55,7 +54,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         /**
          *Splash screen timer.
          */
-        int splashTimeOut = 1000;
+        int splashTimeOut = 2000;
         /**
          * Resume the handler to run the thread when application reopen.
          */
