@@ -11,11 +11,6 @@ package profoodies.com.profoodies.utils;
  */
 public class Constants {
 
-    /**
-     * private constructor to hide the implicit public one.
-     */
-    private Constants(){
-    }
 
     /**
      * Constant for GET COINS FRAGMENT
@@ -36,4 +31,10 @@ public class Constants {
      * Constant for Setting fragment
      */
     public static final String NAME_NAVIGATION_SETTINGS = "settings";
+
+    /**
+     * private constructor to hide the implicit public one.
+     */
+    private Constants() {
+    }
 }

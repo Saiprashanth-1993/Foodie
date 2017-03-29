@@ -48,15 +48,27 @@ public class HomeActivity extends AppCompatActivity
         setSupportActionBar(activityHomeBinding.toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
 
+        /**
+         * for customizing the action bar drawer toggle to overriding default behaviour
+         */
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, activityHomeBinding.drawerLayout,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
-            LinearLayout coordinatorLayout = activityHomeBinding.parent;
+            /**
+             * Initialize the linear layout to move the layout
+             */
+            LinearLayout linearLayout = activityHomeBinding.parent;
 
+            /**
+             * overriding onDrawer Slide, to move the layout when navigation drawer clicked
+             *
+             * @param drawerView Navigation drawer view
+             * @param slideOffset moving offset position
+             */
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset) {
                 super.onDrawerSlide(drawerView, slideOffset);
                 float moveFactor = drawerView.getWidth() * slideOffset;
-                coordinatorLayout.setTranslationX(moveFactor);
+                linearLayout.setTranslationX(moveFactor);
             }
         };
 
@@ -84,6 +96,9 @@ public class HomeActivity extends AppCompatActivity
             }
         });
 
+        /**
+         * Select the first menu from navigation view by default
+         */
         onNavigationItemSelected(activityHomeBinding.navigationView.getMenu().getItem(0));
 
     }
