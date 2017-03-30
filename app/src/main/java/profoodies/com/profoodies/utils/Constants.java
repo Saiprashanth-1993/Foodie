@@ -6,6 +6,8 @@
 package profoodies.com.profoodies.utils;
 
 /**
+ * constants class
+ *
  * @author ContusTeam <developers@contus.in>
  * @version 1.0
  */
