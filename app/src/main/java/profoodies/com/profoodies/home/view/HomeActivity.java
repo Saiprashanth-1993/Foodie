@@ -80,7 +80,14 @@ public class HomeActivity extends AppCompatActivity
         toggle.setDrawerIndicatorEnabled(false);
         toggle.setHomeAsUpIndicator(R.drawable.ic_harmburger);
 
+        /**
+         * To set the title color in white
+         */
         activityHomeBinding.toolbar.setTitleTextColor(Color.WHITE);
+
+        /**
+         * To set the drawer scrim color to transparent, to avoid the shade
+         */
         activityHomeBinding.drawerLayout.setScrimColor(Color.TRANSPARENT);
         /**
          *  Trigger the listener for navigation drawer
@@ -133,9 +140,16 @@ public class HomeActivity extends AppCompatActivity
      * @param itemId Get the item of menus
      */
     public void displaySelectedScreen(int itemId) {
+
+        /**
+         * Local Variables for Fragment and fragment name
+         */
         Fragment fragment = null;
         String fragmentName = null;
 
+        /**
+         *  Condition checks for Fragment to be replaced
+         */
         if (itemId == R.id.nav_getcoins) {
             fragment = new HomepageFragment();
             fragmentName = Constants.NAME_NAVIGATION_GET_COINS;
@@ -170,9 +184,9 @@ public class HomeActivity extends AppCompatActivity
             activityHomeBinding.drawerLayout.closeDrawer(GravityCompat.START);
         } else {
             /**
-             * Let super handle the back press
+             * Close the App when Back button pressed in Home
              */
-            super.onBackPressed();
+            finishAffinity();
         }
     }
 }

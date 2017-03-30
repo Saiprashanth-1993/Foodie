@@ -36,7 +36,7 @@ public class ActivityLogin extends AppCompatActivity {
          *  To initialize the Model and controller in mvvm
          */
         activityLoginBinding.setModel(new UserLogin());
-        activityLoginBinding.setController(new LoginController());
+        activityLoginBinding.setController(new LoginController(activityLoginBinding));
 
         /**
          * to get the view from screen and passing that to animation

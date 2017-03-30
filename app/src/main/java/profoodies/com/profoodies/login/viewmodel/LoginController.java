@@ -11,6 +11,7 @@ import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 
+import profoodies.com.profoodies.databinding.ActivityLoginBinding;
 import profoodies.com.profoodies.home.view.HomeActivity;
 import profoodies.com.profoodies.login.model.UserLogin;
 import profoodies.com.profoodies.utils.CustomUtils;
@@ -25,6 +26,20 @@ import profoodies.com.profoodies.utils.CustomUtils;
 public class LoginController {
 
     private Context context;
+
+    /**
+     * Reference for the LoginActivity Databinding
+     */
+    ActivityLoginBinding activityLoginBinding;
+
+    /**
+     *  parametrized constructor
+     *
+     * @param activityLoginBinding reference for activity login binding
+     */
+    public LoginController(ActivityLoginBinding activityLoginBinding){
+        this.activityLoginBinding = activityLoginBinding;
+    }
 
     /**
      * OnClick listener of login button.
@@ -58,16 +73,20 @@ public class LoginController {
         boolean validationStatus = true;
         if (TextUtils.isEmpty(userEmail)) {
             validationStatus = false;
-            CustomUtils.showSnack(view,"Please make sure usernamefield should not be empty");
+            CustomUtils.showSnack(view,"username field should not be empty");
+            activityLoginBinding.etUsername.requestFocus();
         } else if (TextUtils.isEmpty(password)) {
             validationStatus = false;
-            CustomUtils.showSnack(view,"Please make sure password field should not be empty");
+            CustomUtils.showSnack(view,"password field should not be empty");
+            activityLoginBinding.etPassword.requestFocus();
         }  else if (!Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()) {
             validationStatus = false;
             CustomUtils.showSnack(view,"Please make sure email id is valid");
+            activityLoginBinding.etUsername.requestFocus();
         }else if (password.length() < 6) {
             validationStatus = false;
             CustomUtils.showSnack(view,"Please make sure password should have max of 6 character");
+            activityLoginBinding.etPassword.requestFocus();
         }
         return validationStatus;
     }

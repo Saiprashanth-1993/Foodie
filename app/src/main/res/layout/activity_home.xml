@@ -9,28 +9,35 @@
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        tools:openDrawer="start">
+        android:fitsSystemWindows="true">
 
         <android.support.design.widget.CoordinatorLayout
             android:id="@+id/parent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/app_background"
             android:fitsSystemWindows="true"
             android:orientation="vertical">
-
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?actionBarSize"
-                android:background="@android:color/transparent" />
-
             <FrameLayout
                 android:id="@+id/fl_container"
+                android:background="@drawable/app_background"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"></FrameLayout>
+                android:paddingTop="?actionBarSize"/>
+
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:elevation="0dp"
+                android:background="@android:color/transparent">
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"
+                    android:background="@android:color/transparent" />
+
+            </android.support.design.widget.AppBarLayout>
+
         </android.support.design.widget.CoordinatorLayout>
 
         <android.support.design.widget.NavigationView

@@ -1,41 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
-    <data/>
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="160dp">
+    <data />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="20dp"
-        android:gravity="center">
-        <ImageView
-            android:id="@+id/iv_navigation_header_profile"
-            android:layout_marginTop="20dp"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/ic_person" />
-        <TextView
+        android:layout_height="160dp">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_navigation_username"
-            android:text="Keerthivasan"
-            android:layout_marginTop="10dp"
-            android:paddingBottom="20dp"
-            android:textSize="18sp"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@color/navigation_header_border"
-            />
-    </LinearLayout>
-</RelativeLayout>
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_navigation_header_profile"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_person" />
+
+            <TextView
+                android:id="@+id/tv_navigation_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="20dp"
+                android:text="Keerthivasan"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/navigation_header_border" />
+        </LinearLayout>
+    </RelativeLayout>
 </layout>
