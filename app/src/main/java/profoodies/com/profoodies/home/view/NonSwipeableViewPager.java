@@ -28,25 +28,45 @@ public class NonSwipeableViewPager extends ViewPager {
         setMyScroller();
     }
 
+    /**
+     * Constructor of Non Swipeable Viewpager which can invoke the method directly to activity
+     *
+     * @param context            Context of a Fragment
+     * @param attrs
+     */
     public NonSwipeableViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
         setMyScroller();
     }
 
+    /**
+     * Never allow swiping to switch between pages
+     *
+     * @param event
+     * @return
+     */
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
-        // Never allow swiping to switch between pages
+
         return false;
     }
 
+    /**
+     * Never allow swiping to switch between pages
+     *
+     * @param event
+     * @return
+     */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        // Never allow swiping to switch between pages
+
         return false;
     }
 
-    //down one is added for smooth scrolling
 
+    /**
+     *
+     */
     private void setMyScroller() {
         try {
             Class<?> viewpager = ViewPager.class;
@@ -58,6 +78,9 @@ public class NonSwipeableViewPager extends ViewPager {
         }
     }
 
+    /**
+     * down one is added for smooth scrolling
+     */
     public class MyScroller extends Scroller {
         public MyScroller(Context context) {
             super(context, new DecelerateInterpolator());

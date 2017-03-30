@@ -22,6 +22,12 @@ import xyz.hanks.library.SmallBang;
 public class HomePageController {
     SmallBang smallBang;
 
+    /**
+     *Constructor of Home Page Controller which can invoke the method directly to activity
+     * Smallbang is used for button animation
+     *
+     * @param smallBang
+     */
     public HomePageController(SmallBang smallBang) {
         this.smallBang = smallBang;
     }

@@ -28,6 +28,11 @@ public class CustomAdapter extends PagerAdapter {
 
     LayoutInflater inflater;
 
+    /**
+     * Constructor of Custom Adapter which can invoke the method directly to activity
+     *
+     * @param context
+     */
     public CustomAdapter(Context context) {
         this.context = context;
         inflater = (LayoutInflater) context
