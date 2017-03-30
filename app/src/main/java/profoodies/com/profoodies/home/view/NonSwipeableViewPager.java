@@ -23,6 +23,11 @@ import java.lang.reflect.Field;
  */
 public class NonSwipeableViewPager extends ViewPager {
 
+    /**
+     * Constructor of Non Swipeable Viewpager which can invoke the method directly to activity
+     *
+     * @param context            Context of a Fragment
+     */
     public NonSwipeableViewPager(Context context) {
         super(context);
         setMyScroller();
@@ -82,6 +87,12 @@ public class NonSwipeableViewPager extends ViewPager {
      * down one is added for smooth scrolling
      */
     public class MyScroller extends Scroller {
+
+        /**
+         * Constructor of Scroller which can invoke the Pager scroller with smooth swipe
+         *
+         * @param context
+         */
         public MyScroller(Context context) {
             super(context, new DecelerateInterpolator());
         }
