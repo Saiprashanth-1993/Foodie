@@ -19,9 +19,9 @@ public class CustomAdapter extends PagerAdapter {
 
     LayoutInflater inflater;
 
-    public CustomAdapter(Context context){
-        this.context=context;
-         inflater = (LayoutInflater) context
+    public CustomAdapter(Context context) {
+        this.context = context;
+        inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -32,24 +32,20 @@ public class CustomAdapter extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return view==object;
+        return view == object;
     }
 
     @Override
     public Object instantiateItem(ViewGroup container, final int position) {
-        View vi = inflater.inflate(R.layout.fragment_pager, container, false);
-        return vi;
+        inflater = LayoutInflater.from(context);
+        ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.fragment_pager, container, false);
+        container.addView(layout);
+        return layout;
     }
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((LinearLayout) object);
     }
-
-    @Override
-    public int getItemPosition(Object object) {
-        return POSITION_NONE;
-    }
-
 
 }

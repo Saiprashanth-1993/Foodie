@@ -11,7 +11,7 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import profoodies.com.profoodies.login.view.ActivityLogin;
+import profoodies.com.profoodies.home.view.HomeActivity;
 
 /**
  * Show the splash image of the app and  if user not logged then they will be redirected to
@@ -41,7 +41,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         mRunnable = new Runnable() {
             @Override
             public void run() {
-                    Intent loginActivity = new Intent(SplashScreenActivity.this, ActivityLogin.class);
+                    Intent loginActivity = new Intent(SplashScreenActivity.this, HomeActivity.class);
                     startActivity(loginActivity);
                     finish();
             }

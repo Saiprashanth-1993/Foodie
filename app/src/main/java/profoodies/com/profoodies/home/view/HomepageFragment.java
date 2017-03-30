@@ -40,9 +40,6 @@ public class HomepageFragment extends Fragment  {
 
     }
 
-
-
-
     /**
      * Set up the Ride offers and My rides fragments in the tab
      */

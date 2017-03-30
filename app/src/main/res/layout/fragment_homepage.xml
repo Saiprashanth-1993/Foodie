@@ -3,20 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data />
-
-    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/relative"
+    <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/relative"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
         tools:context="profoodies.com.profoodies.home.view.HomeActivity">
 
         <profoodies.com.profoodies.home.view.NonSwipeableViewPager
             android:id="@+id/viewpager"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_above="@+id/appbar"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+             />
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appbar"
@@ -40,4 +45,5 @@
 
         </android.support.design.widget.AppBarLayout>
     </RelativeLayout>
+    </LinearLayout>
 </layout>

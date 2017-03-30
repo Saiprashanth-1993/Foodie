@@ -13,10 +13,7 @@ import xyz.hanks.library.SmallBang;
 public class HomePageController {
     SmallBang smallBang;
 
-    public HomePageController(){
-    }
-
-    public HomePageController(SmallBang smallBang){
+    public HomePageController(SmallBang smallBang) {
         this.smallBang = smallBang;
     }
 
@@ -35,6 +32,7 @@ public class HomePageController {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 smallBang.bang(view);
                 fModel.setToEditOrSave(true);
             }
