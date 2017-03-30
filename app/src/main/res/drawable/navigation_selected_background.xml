@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:padding="10dp"
-    android:shape="rectangle">
+
+    android:shape="rectangle"
+    android:left="16dp"
+    android:right="16dp"
+    >
     <!-- you can use any color you want I used here Orange color-->
-    <solid android:color="@color/colorSecondaryColor" />
-    <corners android:radius="80dp" />
+    <solid android:color="@color/navigation_highlight_color" />
 </shape>

@@ -123,7 +123,6 @@ public class HomeActivity extends AppCompatActivity
          *Handle navigation view item clicks here
          */
         item.setChecked(true);
-        setTitle(item.getTitle());
         displaySelectedScreen(item.getItemId());
         return true;
     }
@@ -152,8 +151,8 @@ public class HomeActivity extends AppCompatActivity
         }
         if (fragment != null) {
             FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction().add(R.id.fl_container, fragment)
-                    .addToBackStack(fragmentName).commit();
+            fragmentManager.beginTransaction().replace(R.id.fl_container, fragment).commit();
+            setTitle(fragmentName);
         }
 
         /**

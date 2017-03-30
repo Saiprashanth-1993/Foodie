@@ -15,22 +15,22 @@ public class Constants {
     /**
      * Constant for GET COINS FRAGMENT
      */
-    public static final String NAME_NAVIGATION_GET_COINS = "get_coins";
+    public static final String NAME_NAVIGATION_GET_COINS = "Get Coins";
 
     /**
      * Constant for Promotion FRAGMENT
      */
-    public static final String NAME_NAVIGATION_PROMOTIONS = "promotions";
+    public static final String NAME_NAVIGATION_PROMOTIONS = "Promotions";
 
     /**
      * Constant for Promotion FRAGMENT
      */
-    public static final String NAME_NAVIGATION_STORE = "store";
+    public static final String NAME_NAVIGATION_STORE = "Store";
 
     /**
      * Constant for Setting fragment
      */
-    public static final String NAME_NAVIGATION_SETTINGS = "settings";
+    public static final String NAME_NAVIGATION_SETTINGS = "Settings";
 
     /**
      * private constructor to hide the implicit public one.
