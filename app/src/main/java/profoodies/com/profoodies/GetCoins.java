@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
+ * The Dummy class file
+ *
  * @author ContusTeam <developers@contus.in>
  * @version 1.0
  */
