@@ -1,3 +1,8 @@
+/**
+ * @category ProFoodies
+ * @copyright Copyright (C) 2017 Contus. All rights reserved.
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ */
 package profoodies.com.profoodies.home.viewmodel;
 
 import android.content.Context;
@@ -10,8 +15,12 @@ import android.widget.LinearLayout;
 import profoodies.com.profoodies.R;
 
 /**
- * Created by Contus team on 27/3/17.
+ * An adapter used to inflate a view in a view pager
+ *
+ * @author ContusTeam <developers@contus.in>
+ * @version 1.0
  */
+
 
 public class CustomAdapter extends PagerAdapter {
 
@@ -25,9 +34,13 @@ public class CustomAdapter extends PagerAdapter {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
+    /**
+     * to return number of pages in the pager
+     * @return
+     */
     @Override
     public int getCount() {
-        return 2;
+        return 5;
     }
 
     @Override

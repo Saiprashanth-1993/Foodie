@@ -1,3 +1,8 @@
+/**
+ * @category ProFoodies
+ * @copyright Copyright (C) 2017 Contus. All rights reserved.
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ */
 package profoodies.com.profoodies.home.viewmodel;
 
 import android.view.View;
@@ -7,7 +12,11 @@ import profoodies.com.profoodies.home.like.model.LikeModel;
 import xyz.hanks.library.SmallBang;
 
 /**
- * Created by Contus team on 29/3/17.
+ * Controller of the HomePageFragment class
+ * XML view controller trigger all the even listener to do perform the action
+ *
+ * @author Contus Team <developers@contus.in>
+ * @version 1.0
  */
 
 public class HomePageController {
@@ -17,24 +26,37 @@ public class HomePageController {
         this.smallBang = smallBang;
     }
 
-    public View.OnClickListener FavbtnClick(final LikeModel likeModel) {
+    /**
+     * Trigger the event listener action for  profile edit button.
+     *
+     * @param likeModel Get the model of LikeFragment
+     * @return View.OnClickListener OnClickListener of the profile edit click button
+     */
+
+    public View.OnClickListener favBtnClick(final LikeModel likeModel) {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 smallBang.bang(view);
-                likeModel.setToEditOrSave(true);
+                likeModel.setToLikeOrUnlike(true);
             }
         };
     }
 
-    public View.OnClickListener FollowbtnClick(final FollowModel fModel) {
+    /**
+     * Trigger the event listener action for  profile edit button.
+     *
+     * @param fModel Get the model of Follow Fragment
+     * @return View.OnClickListener OnClickListener of the profile edit click button
+     */
+    public View.OnClickListener followBtnClick(final FollowModel fModel) {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 smallBang.bang(view);
-                fModel.setToEditOrSave(true);
+                fModel.setToFollowOrUnfollow(true);
             }
         };
     }

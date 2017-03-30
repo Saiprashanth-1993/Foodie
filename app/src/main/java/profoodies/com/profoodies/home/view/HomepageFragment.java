@@ -1,3 +1,8 @@
+/**
+ * @category ProFoodies
+ * @copyright Copyright (C) 2017 Contus. All rights reserved.
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ */
 package profoodies.com.profoodies.home.view;
 
 import android.databinding.DataBindingUtil;
@@ -16,12 +21,16 @@ import profoodies.com.profoodies.databinding.FragmentHomepageBinding;
 import profoodies.com.profoodies.home.follow.view.FollowFragment;
 import profoodies.com.profoodies.home.like.view.LikeFragment;
 
-
-public class HomepageFragment extends Fragment  {
+/**
+ * Fragment to merge like fragment and follow fragment
+ *
+ * @author ContusTeam <developers@contus.in>
+ * @version 1.0
+ */
+public class HomepageFragment extends Fragment {
 
 
     private FragmentHomepageBinding homepageBinding;
-
 
 
     public HomepageFragment() {
@@ -41,7 +50,7 @@ public class HomepageFragment extends Fragment  {
     }
 
     /**
-     * Set up the Ride offers and My rides fragments in the tab
+     * Set up the Like fragment and Follow fragment in the tab
      */
     private void setTabs() {
         String[] mTitle = new String[]{"Like", "Follow"};

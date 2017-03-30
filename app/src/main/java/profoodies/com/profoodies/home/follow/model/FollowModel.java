@@ -1,28 +1,36 @@
+/**
+ * @category ProFoodies
+ * @copyright Copyright (C) 2017 Contus. All rights reserved.
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ */
 package profoodies.com.profoodies.home.follow.model;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
-import com.android.databinding.library.baseAdapters.BR;
+import profoodies.com.profoodies.BR;
 
 /**
- * Created by Contus team on 28/3/17.
+ * To set a boolean value for follow button
+ *
+ * @author ContusTeam <developers@contus.in>
+ * @version 1.0
  */
 
 public class FollowModel extends BaseObservable {
 
-    private boolean isToEditOrSave=false;
+    private boolean isToFollowOrUnfollow = false;
 
     @Bindable
-    public boolean isToEditOrSave() {
-        return isToEditOrSave;
+    public boolean isToFollowOrUnfollow() {
+        return isToFollowOrUnfollow;
     }
 
     /**
-     * Sets {@link #isToEditOrSave}
+     * Sets {@link #isToFollowOrUnfollow}
      */
-    public void setToEditOrSave(boolean toEditOrSave) {
-        this.isToEditOrSave = toEditOrSave;
-        notifyPropertyChanged(BR.toEditOrSave);
+    public void setToFollowOrUnfollow(boolean toFollowOrUnfollow) {
+        this.isToFollowOrUnfollow = toFollowOrUnfollow;
+        notifyPropertyChanged(BR.toFollowOrUnfollow);
     }
 }

@@ -1,3 +1,8 @@
+/**
+ * @category ProFoodies
+ * @copyright Copyright (C) 2017 Contus. All rights reserved.
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ */
 package profoodies.com.profoodies.home.follow.view;
 
 import android.databinding.DataBindingUtil;
@@ -16,8 +21,17 @@ import profoodies.com.profoodies.home.viewmodel.CustomAdapter;
 import profoodies.com.profoodies.home.viewmodel.HomePageController;
 import xyz.hanks.library.SmallBang;
 
+/**
+ * Fragment to display user profile and follow option with coins
+ *
+ * @author ContusTeam <developers@contus.in>
+ * @version 1.0
+ */
 public class FollowFragment extends Fragment {
 
+    /**
+     * Activity FollowFragment Binding for initializing the layout as data binding.
+     */
     FragmentFollowBinding fragmentFollowBinding;
     SmallBang smallBang;
 
@@ -31,7 +45,7 @@ public class FollowFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        fragmentFollowBinding = DataBindingUtil.inflate(inflater,   R.layout.fragment_follow, container, false);
+        fragmentFollowBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_follow, container, false);
         smallBang = SmallBang.attach2Window(getActivity());
         return fragmentFollowBinding.getRoot();
     }
@@ -39,10 +53,10 @@ public class FollowFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ViewPager pager=(ViewPager)view.findViewById(R.id.pager);
+        ViewPager pager = (ViewPager) view.findViewById(R.id.pager);
         fragmentFollowBinding.setViewController(new HomePageController(smallBang));
         fragmentFollowBinding.setFollowInfo(new FollowModel());
-        CustomAdapter customAdapter=new CustomAdapter(getContext());
+        CustomAdapter customAdapter = new CustomAdapter(getContext());
         pager.setAdapter(customAdapter);
     }
 }

@@ -9,18 +9,4 @@ import android.databinding.BaseObservable;
 
 public class HomePageModel extends BaseObservable{
 
-//    private boolean isToEditOrSave;
-//
-//    @Bindable
-//    public boolean isToEditOrSave() {
-//        return isToEditOrSave;
-//    }
-//
-//    /**
-//     * Sets {@link #isToEditOrSave}
-//     */
-//    public void setToEditOrSave(boolean toEditOrSave) {
-//        this.isToEditOrSave = toEditOrSave;
-//        notifyPropertyChanged(BR.toEditOrSave);
-//    }
 }

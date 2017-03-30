@@ -135,7 +135,7 @@
                 android:contentDescription="@null"
                 android:foreground="?attr/selectableItemBackground"
                 android:onClick="@{viewController.FavbtnClick(LikeInfo)}"
-                android:src="@{LikeInfo.toEditOrSave ? @drawable/heart_round_pink : @drawable/heart_round}"
+                android:src="@{LikeInfo.toLikeOrUnlike ? @drawable/heart_round_pink : @drawable/heart_round}"
                 app:civ_border_color="@android:color/white"
                 app:civ_border_width="0dp" />
 

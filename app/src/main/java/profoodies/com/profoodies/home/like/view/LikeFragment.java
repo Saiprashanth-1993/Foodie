@@ -1,3 +1,8 @@
+/**
+ * @category ProFoodies
+ * @copyright Copyright (C) 2017 Contus. All rights reserved.
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ */
 package profoodies.com.profoodies.home.like.view;
 
 import android.databinding.DataBindingUtil;
@@ -15,7 +20,10 @@ import profoodies.com.profoodies.home.viewmodel.HomePageController;
 import xyz.hanks.library.SmallBang;
 
 /**
- * Created by Contus team on 24/3/17.
+ * Fragment to display user posts and like button with coins
+ *
+ * @author ContusTeam <developers@contus.in>
+ * @version 1.0
  */
 
 public class LikeFragment extends Fragment {

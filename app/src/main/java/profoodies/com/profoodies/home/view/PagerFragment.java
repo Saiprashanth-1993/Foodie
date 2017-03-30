@@ -1,3 +1,9 @@
+/**
+ * @category ProFoodies
+ * @copyright Copyright (C) 2017 Contus. All rights reserved.
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ */
+
 package profoodies.com.profoodies.home.view;
 
 import android.os.Bundle;
@@ -8,6 +14,12 @@ import android.view.ViewGroup;
 
 import profoodies.com.profoodies.R;
 
+/**
+ * A fragment used to display viewpager inside other fragment
+ *
+ * @author ContusTeam <developers@contus.in>
+ * @version 1.0
+ */
 
 public class PagerFragment extends Fragment {
 
