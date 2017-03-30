@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -18,7 +19,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.LinearLayout;
 
 import profoodies.com.profoodies.GetCoins;
 import profoodies.com.profoodies.R;
@@ -56,7 +56,7 @@ public class HomeActivity extends AppCompatActivity
             /**
              * Initialize the linear layout to move the layout
              */
-            LinearLayout linearLayout = activityHomeBinding.parent;
+            CoordinatorLayout coordinatorLayout = activityHomeBinding.parent;
 
             /**
              * overriding onDrawer Slide, to move the layout when navigation drawer clicked
@@ -68,7 +68,7 @@ public class HomeActivity extends AppCompatActivity
             public void onDrawerSlide(View drawerView, float slideOffset) {
                 super.onDrawerSlide(drawerView, slideOffset);
                 float moveFactor = drawerView.getWidth() * slideOffset;
-                linearLayout.setTranslationX(moveFactor);
+                coordinatorLayout.setTranslationX(moveFactor);
             }
         };
 
