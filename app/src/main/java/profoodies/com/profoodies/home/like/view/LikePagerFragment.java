@@ -22,13 +22,6 @@ import profoodies.com.profoodies.R;
 
 public class LikePagerFragment extends Fragment {
 
-    /**
-     *Required empty public constructor
-     */
-    public LikePagerFragment() {
-    }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

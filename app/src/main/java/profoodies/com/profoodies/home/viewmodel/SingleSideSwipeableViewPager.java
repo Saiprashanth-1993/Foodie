@@ -8,7 +8,6 @@ package profoodies.com.profoodies.home.viewmodel;
 import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
 
 /**
  * Single side Swipeable Viewpager to remove both side swipe
@@ -42,37 +41,4 @@ public class SingleSideSwipeableViewPager extends ViewPager {
         super(context);
     }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent ev) {
-
-        switch (ev.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                actionDown(ev);
-            case MotionEvent.ACTION_MOVE:
-                actionMove(ev);
-                break;
-             default:
-                 break;
-        }
-        lastX = ev.getX();
-        if (lockScroll) {
-            return false;
-        } else {
-            return super.onTouchEvent(ev);
-        }
-    }
-
-    public boolean actionDown(MotionEvent ev){
-        lastX = ev.getX();
-        lockScroll = false;
-        return super.onTouchEvent(ev);
-    }
-
-    public void actionMove(MotionEvent ev){
-        if (lastX > ev.getX())
-            lockScroll = false;
-        else
-            lockScroll = true;
-        lastX = ev.getX();
-    }
 }
