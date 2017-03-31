@@ -9,6 +9,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +17,12 @@ import android.view.ViewGroup;
 import profoodies.com.profoodies.R;
 import profoodies.com.profoodies.databinding.FragmentLikeBinding;
 import profoodies.com.profoodies.home.like.model.LikeModel;
+import profoodies.com.profoodies.home.viewmodel.CustomLikePagerAdapter;
+import profoodies.com.profoodies.home.viewmodel.CustomUserAdapter;
 import profoodies.com.profoodies.home.viewmodel.HomePageController;
 import xyz.hanks.library.SmallBang;
+
+import static profoodies.com.profoodies.R.id.viewpager;
 
 /**
  * Fragment to display user posts and like button with coins
@@ -46,8 +51,12 @@ public class LikeFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        ViewPager pager = (ViewPager) view.findViewById(R.id.viewpager);
         fragmentLikeBinding.setViewController(new HomePageController(smallBang));
         fragmentLikeBinding.setLikeInfo(new LikeModel());
+        CustomLikePagerAdapter customLikeAdapter = new CustomLikePagerAdapter(getContext());
+        pager.setAdapter(customLikeAdapter);
+
     }
 }
 

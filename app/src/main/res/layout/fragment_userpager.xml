@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context="profoodies.com.profoodies.home.view.PagerFragment">
+    tools:context="profoodies.com.profoodies.home.follow.view.UserPagerFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,19 +28,20 @@
                 android:background="@android:color/white">
 
                 <android.support.v7.widget.AppCompatImageView
-                    android:id="@+id/burger"
+                    android:id="@+id/user"
                     android:layout_width="match_parent"
-                    android:layout_height="280dp"
-                    android:background="@drawable/user_img" />
+                    android:layout_height="300dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/user_img" />
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/chef_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/burger"
+                    android:layout_below="@+id/user"
+                    android:layout_marginBottom="20dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-
                     android:text="Chef Mark Edmond"
                     android:textColor="#000" />
 
@@ -48,7 +49,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_below="@id/burger"
+                    android:layout_below="@id/user"
+                    android:layout_marginBottom="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp"
                     android:text="$ 50 coins"

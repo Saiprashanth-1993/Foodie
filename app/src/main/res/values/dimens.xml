@@ -20,5 +20,5 @@
     <dimen name="likeCircularImage">55dp</dimen>
     <dimen name="cardView_MarginTop">95dp</dimen>
     <dimen name="cardView_margin">5dp</dimen>
-    <dimen name="likeButton_marginTop">18dp</dimen>
+    <dimen name="likeButton_marginTop">450dp</dimen>
 </resources>

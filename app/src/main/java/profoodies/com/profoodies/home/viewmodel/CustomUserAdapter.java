@@ -10,7 +10,7 @@ import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import profoodies.com.profoodies.R;
 
@@ -22,7 +22,7 @@ import profoodies.com.profoodies.R;
  */
 
 
-public class CustomAdapter extends PagerAdapter {
+public class CustomUserAdapter extends PagerAdapter {
 
     Context context;
 
@@ -33,7 +33,7 @@ public class CustomAdapter extends PagerAdapter {
      *
      * @param context
      */
-    public CustomAdapter(Context context) {
+    public CustomUserAdapter(Context context) {
         this.context = context;
         inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -56,14 +56,14 @@ public class CustomAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, final int position) {
         inflater = LayoutInflater.from(context);
-        ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.fragment_pager, container, false);
+        ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.fragment_userpager, container, false);
         container.addView(layout);
         return layout;
     }
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        container.removeView((LinearLayout) object);
+        container.removeView((RelativeLayout) object);
     }
 
 }

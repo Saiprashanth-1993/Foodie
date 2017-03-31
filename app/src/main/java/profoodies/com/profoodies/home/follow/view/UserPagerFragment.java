@@ -4,7 +4,7 @@
  * @license http://www.apache.org/licenses/LICENSE-2.0
  */
 
-package profoodies.com.profoodies.home.view;
+package profoodies.com.profoodies.home.follow.view;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -21,10 +21,10 @@ import profoodies.com.profoodies.R;
  * @version 1.0
  */
 
-public class PagerFragment extends Fragment {
+public class UserPagerFragment extends Fragment {
 
 
-    public PagerFragment() {
+    public UserPagerFragment() {
         // Required empty public constructor
     }
 
@@ -32,6 +32,6 @@ public class PagerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pager, container, false);
+        return inflater.inflate(R.layout.fragment_userpager, container, false);
     }
 }

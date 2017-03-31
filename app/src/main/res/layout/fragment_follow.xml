@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="FollowInfo"
-            type="profoodies.com.profoodies.home.follow.model.FollowModel"/>
+            type="profoodies.com.profoodies.home.follow.model.FollowModel" />
 
         <variable
             name="viewController"
-            type="profoodies.com.profoodies.home.viewmodel.HomePageController"/>
+            type="profoodies.com.profoodies.home.viewmodel.HomePageController" />
     </data>
 
-    <ScrollView
-        xmlns:tools="http://schemas.android.com/tools"
+    <ScrollView xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -29,7 +29,6 @@
                 android:layout_height="@dimen/circularImage"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="15dp"
                 android:contentDescription="@null"
                 android:src="@drawable/user_img"
                 app:civ_border_color="@android:color/white"
@@ -41,34 +40,36 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/imageView"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="2dp"
                 android:text="Chef Mark Edmond"
                 android:textColor="@android:color/white" />
 
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/pager"
-                android:layout_width="match_parent"
+                android:layout_width="345dp"
                 android:layout_height="348dp"
+                android:layout_centerHorizontal="true"
                 android:layout_marginEnd="@dimen/cardView_margin"
                 android:layout_marginLeft="@dimen/cardView_margin"
                 android:layout_marginRight="@dimen/cardView_margin"
                 android:layout_marginStart="@dimen/cardView_margin"
-                android:layout_marginTop="95dp" />
+                android:layout_marginTop="90dp">
 
+            </android.support.v4.view.ViewPager>
 
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/fheart"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:layout_below="@+id/pager"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="18dp"
+                android:layout_marginBottom="10dip"
+                android:layout_marginTop="450dp"
                 android:clickable="true"
                 android:contentDescription="@null"
                 android:foreground="?attr/selectableItemBackground"
-                android:onClick="@{viewController.FollowbtnClick(FollowInfo)}"
+                android:onClick="@{viewController.followBtnClick(FollowInfo)}"
                 android:src="@{FollowInfo.toFollowOrUnfollow ? @drawable/heart_round_pink : @drawable/heart_round}"
                 app:civ_border_color="@android:color/white"
                 app:civ_border_width="0dp" />
