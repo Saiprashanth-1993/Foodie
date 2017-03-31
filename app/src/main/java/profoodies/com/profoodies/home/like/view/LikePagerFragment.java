@@ -20,8 +20,6 @@ import profoodies.com.profoodies.R;
  * @version 1.0
  */
 
-
-
 public class LikePagerFragment extends Fragment {
 
     /**

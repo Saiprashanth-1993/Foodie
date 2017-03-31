@@ -47,15 +47,9 @@ public class SingleSideSwipeableViewPager extends ViewPager {
 
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                lastX = ev.getX();
-                lockScroll = false;
-                return super.onTouchEvent(ev);
+                actionDown(ev);
             case MotionEvent.ACTION_MOVE:
-                if (lastX > ev.getX())
-                    lockScroll = false;
-                 else
-                    lockScroll = true;
-                lastX = ev.getX();
+                actionMove(ev);
                 break;
              default:
                  break;
@@ -66,5 +60,19 @@ public class SingleSideSwipeableViewPager extends ViewPager {
         } else {
             return super.onTouchEvent(ev);
         }
+    }
+
+    public boolean actionDown(MotionEvent ev){
+        lastX = ev.getX();
+        lockScroll = false;
+        return super.onTouchEvent(ev);
+    }
+
+    public void actionMove(MotionEvent ev){
+        if (lastX > ev.getX())
+            lockScroll = false;
+        else
+            lockScroll = true;
+        lastX = ev.getX();
     }
 }
