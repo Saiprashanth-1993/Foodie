@@ -35,7 +35,9 @@ public class HomePageController {
      * @param smallBang
      */
     public HomePageController(SmallBang smallBang, FragmentLikeBinding fragmentLikeBinding) {
-        //parameterized Constructor
+        /**
+         * here constructor is set to smallbang and fragment following using this keyword
+         */
         this.smallBang = smallBang;
         this.fragmentLikeBinding = fragmentLikeBinding;
     }
@@ -47,7 +49,9 @@ public class HomePageController {
      * @param smallBang
      */
     public HomePageController(SmallBang smallBang, FragmentFollowBinding fragmentFollowBinding) {
-        //parameterized Constructor
+        /**
+         * here constructor is set to smallbang and fragment following using this keyword
+         */
         this.smallBang = smallBang;
         this.fragmentFollowBinding = fragmentFollowBinding;
     }
