@@ -1,4 +1,4 @@
-/**
+/*
  * @category ProFoodies
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
@@ -54,7 +54,7 @@ public class FollowFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ViewPager pager = (ViewPager) view.findViewById(R.id.pager);
-        fragmentFollowBinding.setViewController(new HomePageController(smallBang));
+        fragmentFollowBinding.setViewController(new HomePageController(smallBang,fragmentFollowBinding));
         fragmentFollowBinding.setFollowInfo(new FollowModel());
         CustomUserAdapter customUserAdapter = new CustomUserAdapter(getContext());
         pager.setAdapter(customUserAdapter);

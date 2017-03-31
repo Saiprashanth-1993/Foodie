@@ -1,4 +1,4 @@
-/**
+/*
  * @category ProFoodies
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
@@ -56,7 +56,7 @@ public class CustomUserAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, final int position) {
         inflater = LayoutInflater.from(context);
-        ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.fragment_userpager, container, false);
+        ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.fragment_user_pager, container, false);
         container.addView(layout);
         return layout;
     }

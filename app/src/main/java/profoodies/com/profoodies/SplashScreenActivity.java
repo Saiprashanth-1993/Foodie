@@ -1,4 +1,4 @@
-/**
+/*
  * @category ProFoodies
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
@@ -54,7 +54,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         /**
          *Splash screen timer.
          */
-        int splashTimeOut = 2000;
+        int splashTimeOut = 1000;
         /**
          * Resume the handler to run the thread when application reopen.
          */

@@ -1,4 +1,4 @@
-/**
+/*
  * @category ProFoodies
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
@@ -18,11 +18,8 @@ import profoodies.com.profoodies.R;
 import profoodies.com.profoodies.databinding.FragmentLikeBinding;
 import profoodies.com.profoodies.home.like.model.LikeModel;
 import profoodies.com.profoodies.home.viewmodel.CustomLikePagerAdapter;
-import profoodies.com.profoodies.home.viewmodel.CustomUserAdapter;
 import profoodies.com.profoodies.home.viewmodel.HomePageController;
 import xyz.hanks.library.SmallBang;
-
-import static profoodies.com.profoodies.R.id.viewpager;
 
 /**
  * Fragment to display user posts and like button with coins
@@ -35,6 +32,10 @@ public class LikeFragment extends Fragment {
 
     FragmentLikeBinding fragmentLikeBinding;
     SmallBang smallBang;
+
+    public LikeFragment() {
+    // Required empty public constructor
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,7 +53,7 @@ public class LikeFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ViewPager pager = (ViewPager) view.findViewById(R.id.viewpager);
-        fragmentLikeBinding.setViewController(new HomePageController(smallBang));
+        fragmentLikeBinding.setViewController(new HomePageController(smallBang,fragmentLikeBinding));
         fragmentLikeBinding.setLikeInfo(new LikeModel());
         CustomLikePagerAdapter customLikeAdapter = new CustomLikePagerAdapter(getContext());
         pager.setAdapter(customLikeAdapter);

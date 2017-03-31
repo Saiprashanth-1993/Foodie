@@ -2,20 +2,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context="profoodies.com.profoodies.home.follow.view.UserPagerFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <android.support.v7.widget.CardView
             android:id="@+id/card"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="355dp"
             android:layout_alignTop="@+id/name"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardCornerRadius="3dp"
@@ -24,8 +26,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/white">
+                android:layout_height="match_parent">
 
                 <android.support.v7.widget.AppCompatImageView
                     android:id="@+id/burger"
@@ -46,7 +47,7 @@
                     android:drawablePadding="5dp"
                     android:drawableStart="@drawable/ic_favorite"
                     android:text="30 Likes"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@android:color/darker_gray" />
 
                 <android.support.v7.widget.AppCompatTextView
                     android:layout_width="wrap_content"
@@ -77,10 +78,10 @@
                     android:layout_below="@id/comments"
                     android:layout_marginLeft="5dp"
                     android:layout_marginStart="5dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="5dp"
                     android:layout_marginTop="0dp"
                     android:text="#professionalchefs #pastrylife"
-                    android:textColor="@color/colorLine" />
+                    android:textColor="@android:color/darker_gray" />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
     </LinearLayout>

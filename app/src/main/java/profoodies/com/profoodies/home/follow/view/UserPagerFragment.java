@@ -1,4 +1,4 @@
-/**
+/*
  * @category ProFoodies
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
@@ -32,6 +32,6 @@ public class UserPagerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_userpager, container, false);
+        return inflater.inflate(R.layout.fragment_user_pager, container, false);
     }
 }
