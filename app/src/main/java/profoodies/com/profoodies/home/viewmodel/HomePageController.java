@@ -29,7 +29,7 @@ public class HomePageController {
     FragmentFollowBinding fragmentFollowBinding;
 
     /**
-     *Constructor of Home Page Controller which can invoke the method directly to activity
+     *Separate Constructor of Home Page Controller which can invoke the method directly to activity
      * Smallbang is used for button animation
      *
      * @param smallBang
@@ -39,6 +39,12 @@ public class HomePageController {
         this.fragmentLikeBinding = fragmentLikeBinding;
     }
 
+    /**
+     *Separate Constructor of Home Page Controller which can invoke the method directly to activity
+     * Smallbang is used for button animation
+     *
+     * @param smallBang
+     */
     public HomePageController(SmallBang smallBang, FragmentFollowBinding fragmentFollowBinding) {
         this.smallBang = smallBang;
         this.fragmentFollowBinding = fragmentFollowBinding;
@@ -63,13 +69,18 @@ public class HomePageController {
         };
     }
 
+    /**
+     * this onClick Listner is used to set start and end of animation
+     *
+     * @param view
+     */
     public void likeBtn(View view){
         smallBang.bang(view);
         smallBang.setmListener(new SmallBangListener() {
             @Override
 
-            //this method is used to start the animation manually
             public void onAnimationStart() {
+            //this method is used to start the animation manually
             }
 
             @Override
@@ -98,6 +109,11 @@ public class HomePageController {
         };
     }
 
+    /**
+     * this onClick Listner is used to set start and end of animation
+     *
+     * @param view
+     */
     public void followBtn(View view){
         smallBang.bang(view);
         smallBang.setmListener(new SmallBangListener() {

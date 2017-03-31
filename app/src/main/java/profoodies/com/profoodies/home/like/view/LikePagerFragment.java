@@ -13,12 +13,21 @@ import android.view.ViewGroup;
 
 import profoodies.com.profoodies.R;
 
+/**
+ * PagerFragment to display items into pager
+ *
+ * @author ContusTeam <developers@contus.in>
+ * @version 1.0
+ */
+
+
 
 public class LikePagerFragment extends Fragment {
 
-
+    /**
+     *Required empty public constructor
+     */
     public LikePagerFragment() {
-        // Required empty public constructor
     }
 
 

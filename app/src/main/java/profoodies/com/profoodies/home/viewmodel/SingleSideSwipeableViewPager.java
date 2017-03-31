@@ -23,10 +23,21 @@ public class SingleSideSwipeableViewPager extends ViewPager {
 
     boolean lockScroll = false;
 
+    /**
+     * public Constructor to pass context and attribute
+     *
+     * @param context
+     * @param attrs
+     */
     public SingleSideSwipeableViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
+    /**
+     * public Constructor to pass context
+     *
+     * @param context
+     */
     public SingleSideSwipeableViewPager(Context context) {
         super(context);
     }
@@ -40,13 +51,14 @@ public class SingleSideSwipeableViewPager extends ViewPager {
                 lockScroll = false;
                 return super.onTouchEvent(ev);
             case MotionEvent.ACTION_MOVE:
-                if (lastX > ev.getX()) {
+                if (lastX > ev.getX())
                     lockScroll = false;
-                } else {
+                 else
                     lockScroll = true;
-                }
                 lastX = ev.getX();
                 break;
+             default:
+                 break;
         }
         lastX = ev.getX();
         if (lockScroll) {
