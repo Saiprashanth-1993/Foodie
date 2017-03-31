@@ -15,4 +15,9 @@
     <color name="tab_checked">#F14D3D</color>
     <color name="navigation_highlight_color">#ED4E42</color>
     <color name="navigation_header_border">#3b3b3b</color>
+
+    <color name="light_grey">#e8eced</color>
+    <color name="dark_grey">#acaaaa</color>
+    <color name="light_grey_card">#75E0E0E0</color>
+    <color name="dark_white">#FFFFFF</color>
 </resources>

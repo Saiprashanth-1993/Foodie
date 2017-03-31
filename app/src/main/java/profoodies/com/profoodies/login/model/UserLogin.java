@@ -1,4 +1,4 @@
-/**
+/*
  * @category FoodLover
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
@@ -14,6 +14,11 @@ import android.databinding.BaseObservable;
  * @version 1.0
  */
 public class UserLogin extends BaseObservable {
+
+    /**
+     * Warning Message for login
+     */
+    private String warning = "Only Instagram Users are allowed";
 
     /**
      *  Instagram Username
@@ -57,7 +62,7 @@ public class UserLogin extends BaseObservable {
      * @return to show the info message in login username
      */
     public String getNameError(){
-        return "Only Instagram Users are allowed";
+        return warning;
     }
 
 }

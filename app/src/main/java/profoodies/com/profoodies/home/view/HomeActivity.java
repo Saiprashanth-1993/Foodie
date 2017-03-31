@@ -1,4 +1,4 @@
-/**
+/*
  * @category ProFoodies
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
@@ -165,7 +165,10 @@ public class HomeActivity extends AppCompatActivity
         }
         if (fragment != null) {
             FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.fl_container, fragment).commit();
+            fragmentManager.beginTransaction()
+                    .add(R.id.fl_container, fragment)
+                    .addToBackStack(fragmentName)
+                    .commit();
             setTitle(fragmentName);
         }
 

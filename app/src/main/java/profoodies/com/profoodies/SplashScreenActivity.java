@@ -1,4 +1,4 @@
-/**
+/*
  * @category ProFoodies
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
@@ -11,7 +11,7 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import profoodies.com.profoodies.home.view.HomeActivity;
+import profoodies.com.profoodies.login.view.ActivityLogin;
 
 /**
  * Show the splash image of the app and  if user not logged then they will be redirected to
@@ -41,7 +41,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         mRunnable = new Runnable() {
             @Override
             public void run() {
-                    Intent loginActivity = new Intent(SplashScreenActivity.this, HomeActivity.class);
+                    Intent loginActivity = new Intent(SplashScreenActivity.this, ActivityLogin.class);
                     startActivity(loginActivity);
                     finish();
             }

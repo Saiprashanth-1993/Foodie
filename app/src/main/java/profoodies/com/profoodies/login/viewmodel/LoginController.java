@@ -1,4 +1,4 @@
-/**
+/*
  * @category FoodLover
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
