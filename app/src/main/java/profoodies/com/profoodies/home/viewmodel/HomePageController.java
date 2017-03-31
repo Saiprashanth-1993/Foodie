@@ -33,6 +33,7 @@ public class HomePageController {
      * Smallbang is used for button animation
      *
      * @param smallBang
+     * @param fragmentLikeBinding
      */
     public HomePageController(SmallBang smallBang, FragmentLikeBinding fragmentLikeBinding) {
         /**
@@ -47,6 +48,7 @@ public class HomePageController {
      * Smallbang is used for button animation
      *
      * @param smallBang
+     * @param fragmentFollowBinding
      */
     public HomePageController(SmallBang smallBang, FragmentFollowBinding fragmentFollowBinding) {
         /**
