@@ -51,6 +51,4 @@ public class UserLogin extends BaseObservable {
     public void setPassword(String password) {
         this.password = password;
     }
-
-
 }
