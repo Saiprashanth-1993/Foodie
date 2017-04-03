@@ -23,7 +23,6 @@ import profoodies.com.profoodies.R;
 
 public class UserPagerFragment extends Fragment {
 
-
     public UserPagerFragment() {
         // Required empty public constructor
     }

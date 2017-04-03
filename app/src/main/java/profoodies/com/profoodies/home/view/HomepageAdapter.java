@@ -28,6 +28,7 @@ public class HomepageAdapter extends FragmentStatePagerAdapter {
     /**
      * Fragment list Which contains the fragments on the adapter.
      */
+
     private List<Fragment> fragmentList;
 
     /**
@@ -35,6 +36,7 @@ public class HomepageAdapter extends FragmentStatePagerAdapter {
      *
      * @param fm the Instance of the FragmentManager.
      */
+
     public HomepageAdapter(FragmentManager fm) {
         super(fm);
     }
@@ -44,6 +46,7 @@ public class HomepageAdapter extends FragmentStatePagerAdapter {
      *
      * @param titles Title list.
      */
+
     public void setTitle(String[] titles) {
         this.mTitle = titles;
     }
@@ -53,6 +56,7 @@ public class HomepageAdapter extends FragmentStatePagerAdapter {
      *
      * @param fragmentList List of fragment.
      */
+
     public void setFragmentList(List<Fragment> fragmentList) {
         this.fragmentList = fragmentList;
     }

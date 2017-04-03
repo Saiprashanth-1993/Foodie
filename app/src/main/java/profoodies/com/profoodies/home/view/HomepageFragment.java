@@ -33,12 +33,12 @@ import profoodies.com.profoodies.home.like.view.LikeFragment;
 public class HomepageFragment extends Fragment {
 
     Menu menu;
+
     private FragmentHomepageBinding homepageBinding;
 
     public HomepageFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,7 +48,6 @@ public class HomepageFragment extends Fragment {
         setTabs();
         setHasOptionsMenu(true);
         return homepageBinding.getRoot();
-
     }
 
     @Override
@@ -60,7 +59,6 @@ public class HomepageFragment extends Fragment {
         int coinsValue = Integer.parseInt(coins);
         coinsValue++;
         menu.getItem(0).setTitle(coinsValue + "Coins");
-
         super.onCreateOptionsMenu(menu, inflater);
     }
 
@@ -78,9 +76,7 @@ public class HomepageFragment extends Fragment {
         homepageBinding.tabs.setupWithViewPager(homepageBinding.viewpager);
     }
 
-
     private List<Fragment> getFragmentList() {
-
         /**
          * Add the fragment as a list.
          */
