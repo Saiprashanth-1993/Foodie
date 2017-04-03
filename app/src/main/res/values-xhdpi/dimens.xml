@@ -22,5 +22,5 @@
     <dimen name="cardView_margin">5dp</dimen>
     <dimen name="likeButton_marginTop">450dp</dimen>
     <dimen name="ChefNameMarginTop">2dp</dimen>
-    <dimen name="Like_txt_MarginRight">89dp</dimen>
+    <dimen name="Like_txt_MarginRight">90dp</dimen>
 </resources>

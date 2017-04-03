@@ -22,7 +22,7 @@ import profoodies.com.profoodies.R;
  */
 
 
-public class CustomUserAdapter extends PagerAdapter {
+public class CustomFollowAdapter extends PagerAdapter {
 
     Context context;
 
@@ -33,7 +33,7 @@ public class CustomUserAdapter extends PagerAdapter {
      *
      * @param context
      */
-    public CustomUserAdapter(Context context) {
+    public CustomFollowAdapter(Context context) {
         this.context = context;
         inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -45,7 +45,7 @@ public class CustomUserAdapter extends PagerAdapter {
      */
     @Override
     public int getCount() {
-        return 5;
+        return 20;
     }
 
     @Override

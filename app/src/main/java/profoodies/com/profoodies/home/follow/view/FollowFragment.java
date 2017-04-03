@@ -9,7 +9,6 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +16,9 @@ import android.view.ViewGroup;
 import profoodies.com.profoodies.R;
 import profoodies.com.profoodies.databinding.FragmentFollowBinding;
 import profoodies.com.profoodies.home.follow.model.FollowModel;
-import profoodies.com.profoodies.home.viewmodel.CustomUserAdapter;
+import profoodies.com.profoodies.home.viewmodel.CustomFollowAdapter;
 import profoodies.com.profoodies.home.viewmodel.HomePageController;
+import profoodies.com.profoodies.home.viewmodel.SingleSideSwipeableViewPager;
 import xyz.hanks.library.SmallBang;
 
 /**
@@ -53,10 +53,10 @@ public class FollowFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ViewPager pager = (ViewPager) view.findViewById(R.id.pager);
-        fragmentFollowBinding.setViewController(new HomePageController(smallBang,fragmentFollowBinding));
+        fragmentFollowBinding.pager.setAllowedSwipeDirection(SingleSideSwipeableViewPager.SwipeDirection.RIGHT);
+        fragmentFollowBinding.setViewController(new HomePageController(smallBang, fragmentFollowBinding));
         fragmentFollowBinding.setFollowInfo(new FollowModel());
-        CustomUserAdapter customUserAdapter = new CustomUserAdapter(getContext());
-        pager.setAdapter(customUserAdapter);
+        CustomFollowAdapter customFollowAdapter = new CustomFollowAdapter(getContext());
+        fragmentFollowBinding.pager.setAdapter(customFollowAdapter);
     }
 }

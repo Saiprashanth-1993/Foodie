@@ -55,9 +55,7 @@
                 android:layout_marginRight="@dimen/cardView_margin"
                 android:layout_marginStart="@dimen/cardView_margin"
                 android:layout_marginEnd="@dimen/cardView_margin"
-                android:layout_marginTop="85dp">
-
-            </profoodies.com.profoodies.home.viewmodel.SingleSideSwipeableViewPager>
+                android:layout_marginTop="85dp"/>
 
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -74,6 +72,16 @@
                 android:src="@{FollowInfo.toFollowOrUnfollow ? @drawable/ic_follow_pink : @drawable/follow}"
                 app:civ_border_color="@android:color/white"
                 app:civ_border_width="0dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/pager"
+                android:layout_marginRight="75dp"
+                android:layout_marginTop="27dp"
+                android:text="Follow +4"
+                android:textColor="@android:color/white" />
 
         </RelativeLayout>
     </ScrollView>

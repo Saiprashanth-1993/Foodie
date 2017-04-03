@@ -6,10 +6,10 @@
 package profoodies.com.profoodies.home.like.view;
 
 import android.databinding.DataBindingUtil;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +19,7 @@ import profoodies.com.profoodies.databinding.FragmentLikeBinding;
 import profoodies.com.profoodies.home.like.model.LikeModel;
 import profoodies.com.profoodies.home.viewmodel.CustomLikePagerAdapter;
 import profoodies.com.profoodies.home.viewmodel.HomePageController;
+import profoodies.com.profoodies.home.viewmodel.SingleSideSwipeableViewPager;
 import xyz.hanks.library.SmallBang;
 
 /**
@@ -32,9 +33,10 @@ public class LikeFragment extends Fragment {
 
     FragmentLikeBinding fragmentLikeBinding;
     SmallBang smallBang;
+    Typeface typeface;
 
     public LikeFragment() {
-    // Required empty public constructor
+        // Required empty public constructor
     }
 
     @Override
@@ -52,11 +54,12 @@ public class LikeFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ViewPager pager = (ViewPager) view.findViewById(R.id.viewpager);
-        fragmentLikeBinding.setViewController(new HomePageController(smallBang,fragmentLikeBinding));
+        fragmentLikeBinding.viewpager.setAllowedSwipeDirection(SingleSideSwipeableViewPager.SwipeDirection.RIGHT);
+        fragmentLikeBinding.setViewController(new HomePageController(smallBang, fragmentLikeBinding));
         fragmentLikeBinding.setLikeInfo(new LikeModel());
+        fragmentLikeBinding.name.setTypeface(typeface);
         CustomLikePagerAdapter customLikeAdapter = new CustomLikePagerAdapter(getContext());
-        pager.setAdapter(customLikeAdapter);
+        fragmentLikeBinding.viewpager.setAdapter(customLikeAdapter);
 
     }
 }

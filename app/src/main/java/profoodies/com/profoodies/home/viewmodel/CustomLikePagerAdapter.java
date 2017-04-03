@@ -48,7 +48,7 @@ public class CustomLikePagerAdapter extends PagerAdapter {
      */
     @Override
     public int getCount() {
-        return 5;
+        return 20;
     }
 
     @Override
