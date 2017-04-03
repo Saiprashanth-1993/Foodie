@@ -35,8 +35,6 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
         threadHandler = new Handler();
         mRunnable = new Runnable() {
             @Override
