@@ -3,6 +3,7 @@
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
  */
+
 package profoodies.com.profoodies.home.view;
 
 import android.databinding.DataBindingUtil;
@@ -10,6 +11,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -29,9 +32,8 @@ import profoodies.com.profoodies.home.like.view.LikeFragment;
  */
 public class HomepageFragment extends Fragment {
 
-
+    Menu menu;
     private FragmentHomepageBinding homepageBinding;
-
 
     public HomepageFragment() {
         // Required empty public constructor
@@ -48,6 +50,20 @@ public class HomepageFragment extends Fragment {
         return homepageBinding.getRoot();
 
     }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+
+        this.menu = menu;
+        inflater.inflate(R.menu.coins_counter, menu);
+        String coins = menu.getItem(0).getTitle().toString();
+        int coinsValue = Integer.parseInt(coins);
+        coinsValue++;
+        menu.getItem(0).setTitle(coinsValue + "Coins");
+
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
 
     /**
      * Set up the Like fragment and Follow fragment in the tab

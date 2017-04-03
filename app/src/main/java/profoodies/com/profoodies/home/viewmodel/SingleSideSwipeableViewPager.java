@@ -3,6 +3,7 @@
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
  */
+
 package profoodies.com.profoodies.home.viewmodel;
 
 import android.content.Context;
@@ -23,6 +24,13 @@ public class SingleSideSwipeableViewPager extends ViewPager {
     private float initialXValue;
     private SwipeDirection direction;
 
+
+    /**
+     * public Constructor to pass context and attribute
+     *
+     * @param context
+     * @param attrs
+     */
     public SingleSideSwipeableViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.direction = SwipeDirection.ALL;
@@ -61,11 +69,8 @@ public class SingleSideSwipeableViewPager extends ViewPager {
         if (event.getAction() == MotionEvent.ACTION_MOVE) {
             try {
                 float diffX = event.getX() - initialXValue;
-                if (diffX > 0 && direction == SwipeDirection.RIGHT) {
+                if ((diffX > 0 && direction == SwipeDirection.RIGHT)||(diffX < 0 && direction == SwipeDirection.LEFT)) {
                     // swipe from left to right detected
-                    return false;
-                } else if (diffX < 0 && direction == SwipeDirection.LEFT) {
-                    // swipe from right to left detected
                     return false;
                 }
             } catch (Exception exception) {

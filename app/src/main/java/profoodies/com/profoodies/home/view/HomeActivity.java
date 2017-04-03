@@ -3,6 +3,7 @@
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
  */
+
 package profoodies.com.profoodies.home.view;
 
 import android.databinding.DataBindingUtil;
@@ -38,7 +39,6 @@ public class HomeActivity extends AppCompatActivity
      * Activity Home Binding for initializing the layout as data binding.
      */
     ActivityHomeBinding activityHomeBinding;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
