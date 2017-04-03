@@ -3,7 +3,9 @@
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
  */
+
 package profoodies.com.profoodies.utils;
+
 import android.support.design.widget.Snackbar;
 import android.view.View;
 

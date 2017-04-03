@@ -3,6 +3,7 @@
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
  */
+
 package profoodies.com.profoodies;
 
 import android.content.Intent;
@@ -41,9 +42,9 @@ public class SplashScreenActivity extends AppCompatActivity {
         mRunnable = new Runnable() {
             @Override
             public void run() {
-                    Intent loginActivity = new Intent(SplashScreenActivity.this, ActivityLogin.class);
-                    startActivity(loginActivity);
-                    finish();
+                Intent loginActivity = new Intent(SplashScreenActivity.this, ActivityLogin.class);
+                startActivity(loginActivity);
+                finish();
             }
         };
     }

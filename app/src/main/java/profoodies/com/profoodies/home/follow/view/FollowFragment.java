@@ -3,6 +3,7 @@
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
  */
+
 package profoodies.com.profoodies.home.follow.view;
 
 import android.databinding.DataBindingUtil;
@@ -33,13 +34,12 @@ public class FollowFragment extends Fragment {
      * Activity FollowFragment Binding for initializing the layout as data binding.
      */
     FragmentFollowBinding fragmentFollowBinding;
-    SmallBang smallBang;
 
+    SmallBang smallBang;
 
     public FollowFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

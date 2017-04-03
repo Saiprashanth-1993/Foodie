@@ -3,6 +3,7 @@
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
  */
+
 package profoodies.com.profoodies.home.view;
 
 import android.support.v4.app.Fragment;
@@ -24,6 +25,7 @@ public class HomepageAdapter extends FragmentStatePagerAdapter {
      * Title of the fragment list.
      */
     private String[] mTitle;
+
     /**
      * Fragment list Which contains the fragments on the adapter.
      */

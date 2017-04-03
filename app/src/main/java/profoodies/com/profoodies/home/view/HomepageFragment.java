@@ -3,6 +3,7 @@
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
  */
+
 package profoodies.com.profoodies.home.view;
 
 import android.databinding.DataBindingUtil;
@@ -29,14 +30,11 @@ import profoodies.com.profoodies.home.like.view.LikeFragment;
  */
 public class HomepageFragment extends Fragment {
 
-
     private FragmentHomepageBinding homepageBinding;
-
 
     public HomepageFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -62,7 +60,6 @@ public class HomepageFragment extends Fragment {
         homepageBinding.tabs.setupWithViewPager(homepageBinding.viewpager);
     }
 
-
     private List<Fragment> getFragmentList() {
 
         /**
@@ -75,5 +72,4 @@ public class HomepageFragment extends Fragment {
         fragmentList.add(followFragment);
         return fragmentList;
     }
-
 }

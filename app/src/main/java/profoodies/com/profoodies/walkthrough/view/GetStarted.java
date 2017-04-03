@@ -3,6 +3,7 @@
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
  */
+
 package profoodies.com.profoodies.walkthrough.view;
 
 import android.databinding.DataBindingUtil;
@@ -34,7 +35,7 @@ public class GetStarted extends AppCompatActivity implements ViewPager.OnPageCha
         super.onCreate(savedInstanceState);
         activityGetstartedBinding = DataBindingUtil.setContentView(this, R.layout.activity_getstarted);
         activityGetstartedBinding.setViewController(new ViewController(activityGetstartedBinding));
-        GetStartedAdapter getStartedAdapter = new GetStartedAdapter(GetStarted.this);
+        GetStartedAdapter getStartedAdapter = new GetStartedAdapter(this);
         activityGetstartedBinding.viewPager.setAdapter(getStartedAdapter);
         activityGetstartedBinding.indicator.setViewPager(activityGetstartedBinding.viewPager);
         activityGetstartedBinding.viewPager.addOnPageChangeListener(this);
@@ -49,7 +50,7 @@ public class GetStarted extends AppCompatActivity implements ViewPager.OnPageCha
     }
 
     /**
-     *  Method that handles show/hide of Skip,Continue, next button based on screen select
+     * Method that handles show/hide of Skip,Continue, next button based on screen select
      *
      * @param position view item position in view pager
      */
@@ -66,7 +67,6 @@ public class GetStarted extends AppCompatActivity implements ViewPager.OnPageCha
             activityGetstartedBinding.next.setVisibility(View.VISIBLE);
             activityGetstartedBinding.continueButton.setVisibility(View.INVISIBLE);
         }
-
     }
 
     @Override
@@ -75,6 +75,4 @@ public class GetStarted extends AppCompatActivity implements ViewPager.OnPageCha
          * Unused method of the Listener
          */
     }
-
-
 }

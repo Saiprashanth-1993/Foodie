@@ -3,6 +3,7 @@
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
  */
+
 package profoodies.com.profoodies.login.model;
 
 import android.databinding.BaseObservable;
@@ -16,17 +17,12 @@ import android.databinding.BaseObservable;
 public class UserLogin extends BaseObservable {
 
     /**
-     * Warning Message for login
-     */
-    private String warning = "Only Instagram Users are allowed";
-
-    /**
-     *  Instagram Username
+     * Instagram Username
      */
     private String username;
 
     /**
-     *  Password of the user
+     * Password of the user
      */
     private String password;
 
@@ -56,13 +52,5 @@ public class UserLogin extends BaseObservable {
         this.password = password;
     }
 
-    /**
-     * Method to get the warning messae
-     *
-     * @return to show the info message in login username
-     */
-    public String getNameError(){
-        return warning;
-    }
 
 }

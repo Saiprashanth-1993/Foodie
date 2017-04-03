@@ -3,6 +3,7 @@
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
  */
+
 package profoodies.com.profoodies.home.view;
 
 import android.databinding.DataBindingUtil;
@@ -20,7 +21,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 
-import profoodies.com.profoodies.GetCoins;
 import profoodies.com.profoodies.R;
 import profoodies.com.profoodies.databinding.ActivityHomeBinding;
 import profoodies.com.profoodies.utils.Constants;
@@ -38,7 +38,6 @@ public class HomeActivity extends AppCompatActivity
      * Activity Home Binding for initializing the layout as data binding.
      */
     ActivityHomeBinding activityHomeBinding;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -114,7 +113,9 @@ public class HomeActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
 
         /**
-         *Handle action bar item clicks here. The action bar will automatically handle clicks on the Home/Up button, so long as you specify a parent activity in AndroidManifest.xml.
+         * Handle action bar item clicks here.
+         * The action bar will automatically handle clicks on the Home/Up button,
+         * so long as you specify a parent activity in AndroidManifest.xml.
          */
         int i = item.getItemId();
         if (i == android.R.id.home) {
@@ -154,13 +155,10 @@ public class HomeActivity extends AppCompatActivity
             fragment = new HomepageFragment();
             fragmentName = Constants.NAME_NAVIGATION_GET_COINS;
         } else if (itemId == R.id.nav_promotions) {
-            fragment = new GetCoins();
             fragmentName = Constants.NAME_NAVIGATION_PROMOTIONS;
         } else if (itemId == R.id.nav_store) {
-            fragment = new GetCoins();
             fragmentName = Constants.NAME_NAVIGATION_STORE;
         } else if (itemId == R.id.nav_settings) {
-            fragment = new GetCoins();
             fragmentName = Constants.NAME_NAVIGATION_SETTINGS;
         }
         if (fragment != null) {

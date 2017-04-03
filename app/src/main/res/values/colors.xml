@@ -20,4 +20,6 @@
     <color name="dark_grey">#acaaaa</color>
     <color name="light_grey_card">#75E0E0E0</color>
     <color name="dark_white">#FFFFFF</color>
+    <color name="btnBackground">#F72B47</color>
+
 </resources>

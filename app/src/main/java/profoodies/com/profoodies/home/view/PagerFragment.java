@@ -23,7 +23,6 @@ import profoodies.com.profoodies.R;
 
 public class PagerFragment extends Fragment {
 
-
     public PagerFragment() {
         // Required empty public constructor
     }

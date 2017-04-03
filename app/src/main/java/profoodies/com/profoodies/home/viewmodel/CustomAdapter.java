@@ -3,6 +3,7 @@
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
  */
+
 package profoodies.com.profoodies.home.viewmodel;
 
 import android.content.Context;
@@ -20,7 +21,6 @@ import profoodies.com.profoodies.R;
  * @author ContusTeam <developers@contus.in>
  * @version 1.0
  */
-
 
 public class CustomAdapter extends PagerAdapter {
 

@@ -3,6 +3,7 @@
  * @copyright Copyright (C) 2017 Contus. All rights reserved.
  * @license http://www.apache.org/licenses/LICENSE-2.0
  */
+
 package profoodies.com.profoodies.home.like.view;
 
 import android.databinding.DataBindingUtil;
@@ -29,6 +30,7 @@ import xyz.hanks.library.SmallBang;
 public class LikeFragment extends Fragment {
 
     FragmentLikeBinding fragmentLikeBinding;
+
     SmallBang smallBang;
 
     @Override
