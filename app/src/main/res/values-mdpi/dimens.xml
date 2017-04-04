@@ -13,7 +13,7 @@
     <dimen name="text_small">11dp</dimen>
     <dimen name="text_tiny">10dp</dimen>
     <dimen name="tabsHeight">48dp</dimen>
-    <dimen name="circularImage">50dp</dimen>
+    <dimen name="circularImage">45dp</dimen>
     <dimen name="CardView_width">345dp</dimen>
     <dimen name="CardView_height">348dp</dimen>
     <dimen name="foodImage">270dp</dimen>

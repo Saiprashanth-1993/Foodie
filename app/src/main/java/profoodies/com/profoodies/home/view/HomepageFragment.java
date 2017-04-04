@@ -23,6 +23,7 @@ import profoodies.com.profoodies.R;
 import profoodies.com.profoodies.databinding.FragmentHomepageBinding;
 import profoodies.com.profoodies.home.follow.view.FollowFragment;
 import profoodies.com.profoodies.home.like.view.LikeFragment;
+import profoodies.com.profoodies.interfaces.IFavouriteMedia;
 
 /**
  * Fragment to merge like fragment and follow fragment
@@ -30,7 +31,7 @@ import profoodies.com.profoodies.home.like.view.LikeFragment;
  * @author ContusTeam <developers@contus.in>
  * @version 1.0
  */
-public class HomepageFragment extends Fragment {
+public class HomepageFragment extends Fragment implements IFavouriteMedia {
 
     Menu menu;
 
@@ -55,9 +56,6 @@ public class HomepageFragment extends Fragment {
 
         this.menu = menu;
         inflater.inflate(R.menu.coins_counter, menu);
-        /*coins = menu.getItem(0).getTitle().toString();
-        coinsValue = Integer.parseInt(coins);
-        coinsValue++;*/
         super.onCreateOptionsMenu(menu, inflater);
     }
 
@@ -80,11 +78,19 @@ public class HomepageFragment extends Fragment {
          * Add the fragment as a list.
          */
         List<Fragment> fragmentList = new ArrayList<>();
-        LikeFragment likeFragment = new LikeFragment();
-        FollowFragment followFragment = new FollowFragment();
+        LikeFragment likeFragment = LikeFragment.newInstance(this);
+        FollowFragment followFragment = FollowFragment.newInstance(this);
         fragmentList.add(likeFragment);
         fragmentList.add(followFragment);
         return fragmentList;
     }
 
+    @Override
+    public void favouriteOnClick() {
+        int coinsValue;
+        String coins = menu.getItem(0).getTitle().toString();
+        coinsValue = Integer.parseInt(coins);
+        coinsValue++;
+        menu.getItem(0).setTitle(String.valueOf(coinsValue));
+    }
 }

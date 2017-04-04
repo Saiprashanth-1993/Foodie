@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
    <item
-       android:id="@+id/coins"
-       android:actionLayout="@layout/counter"
+       android:id="@+id/count"
+       android:title="0"
        app:showAsAction="ifRoom"/>
 </menu>

@@ -20,6 +20,7 @@ import profoodies.com.profoodies.home.follow.model.FollowStatus;
 import profoodies.com.profoodies.home.viewmodel.CustomFollowAdapter;
 import profoodies.com.profoodies.home.viewmodel.HomePageController;
 import profoodies.com.profoodies.home.viewmodel.SingleSideSwipeableViewPager;
+import profoodies.com.profoodies.interfaces.IFavouriteMedia;
 import xyz.hanks.library.SmallBang;
 
 /**
@@ -30,17 +31,20 @@ import xyz.hanks.library.SmallBang;
  */
 public class FollowFragment extends Fragment {
 
+    private static IFavouriteMedia favouriteMedia;
     /**
      * Activity FollowFragment Binding for initializing the layout as data binding.
      */
     FragmentFollowBinding fragmentFollowBinding;
-
     SmallBang smallBang;
 
-    public FollowFragment() {
-        // Required empty public constructor
+
+    public static FollowFragment newInstance(IFavouriteMedia favourite) {
+        FollowFragment followFragment = new FollowFragment();
+        favouriteMedia = favourite;
+        return followFragment;
     }
-    
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -54,9 +58,10 @@ public class FollowFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         fragmentFollowBinding.pager.setAllowedSwipeDirection(SingleSideSwipeableViewPager.SwipeDirection.RIGHT);
-        fragmentFollowBinding.setViewController(new HomePageController(smallBang, fragmentFollowBinding));
+        fragmentFollowBinding.setViewController(new HomePageController(smallBang, fragmentFollowBinding,favouriteMedia));
         fragmentFollowBinding.setFollowStatus(new FollowStatus());
         CustomFollowAdapter customFollowAdapter = new CustomFollowAdapter(getContext());
         fragmentFollowBinding.pager.setAdapter(customFollowAdapter);
     }
+
 }

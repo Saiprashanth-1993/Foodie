@@ -48,14 +48,14 @@
             <profoodies.com.profoodies.home.viewmodel.SingleSideSwipeableViewPager
                 android:id="@+id/pager"
                 android:layout_width="match_parent"
-                android:layout_height="355dp"
+                android:layout_height="360dp"
                 android:layout_centerHorizontal="true"
                 android:overScrollMode="never"
                 android:layout_marginLeft="@dimen/cardView_margin"
                 android:layout_marginRight="@dimen/cardView_margin"
                 android:layout_marginStart="@dimen/cardView_margin"
                 android:layout_marginEnd="@dimen/cardView_margin"
-                android:layout_marginTop="85dp"/>
+                android:layout_marginTop="80dp"/>
 
 
             <de.hdodenhof.circleimageview.CircleImageView

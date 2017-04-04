@@ -13,6 +13,7 @@ import profoodies.com.profoodies.databinding.FragmentFollowBinding;
 import profoodies.com.profoodies.databinding.FragmentLikeBinding;
 import profoodies.com.profoodies.home.follow.model.FollowStatus;
 import profoodies.com.profoodies.home.like.model.LikeStatus;
+import profoodies.com.profoodies.interfaces.IFavouriteMedia;
 import xyz.hanks.library.SmallBang;
 import xyz.hanks.library.SmallBangListener;
 
@@ -32,17 +33,21 @@ public class HomePageController {
 
     FragmentFollowBinding fragmentFollowBinding;
 
+    IFavouriteMedia favouriteMedia;
+
     /**
      * Separate Constructor of Home Page Controller which can invoke the method directly to activity
      * Smallbang is used for button animation
      *
      * @param smallBang
      * @param fragmentLikeBinding
+     * @param like
      */
-    public HomePageController(SmallBang smallBang, FragmentLikeBinding fragmentLikeBinding) {
+    public HomePageController(SmallBang smallBang, FragmentLikeBinding fragmentLikeBinding, IFavouriteMedia like) {
         /**
          * here constructor is set to smallbang and fragment following using this keyword
          */
+        this.favouriteMedia = like;
         this.smallBang = smallBang;
         this.fragmentLikeBinding = fragmentLikeBinding;
     }
@@ -54,11 +59,12 @@ public class HomePageController {
      * @param smallBang
      * @param fragmentFollowBinding
      */
-    public HomePageController(SmallBang smallBang, FragmentFollowBinding fragmentFollowBinding) {
+    public HomePageController(SmallBang smallBang, FragmentFollowBinding fragmentFollowBinding,IFavouriteMedia follow) {
         /**
          * here constructor is set to smallbang and fragment following using this keyword
          */
         this.smallBang = smallBang;
+        this.favouriteMedia = follow;
         this.fragmentFollowBinding = fragmentFollowBinding;
     }
 
@@ -73,7 +79,7 @@ public class HomePageController {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                favouriteMedia.favouriteOnClick();
                 likeModel.setLike(true);
                 likeBtn(view);
 
@@ -113,10 +119,9 @@ public class HomePageController {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                favouriteMedia.favouriteOnClick();
                 followStatus.setFollowed(true);
                 followBtn(view);
-
             }
         };
     }

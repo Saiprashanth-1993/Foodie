@@ -21,6 +21,7 @@ import profoodies.com.profoodies.home.like.model.LikeStatus;
 import profoodies.com.profoodies.home.viewmodel.CustomLikePagerAdapter;
 import profoodies.com.profoodies.home.viewmodel.HomePageController;
 import profoodies.com.profoodies.home.viewmodel.SingleSideSwipeableViewPager;
+import profoodies.com.profoodies.interfaces.IFavouriteMedia;
 import xyz.hanks.library.SmallBang;
 
 /**
@@ -32,14 +33,15 @@ import xyz.hanks.library.SmallBang;
 
 public class LikeFragment extends Fragment {
 
+    private static IFavouriteMedia favouriteMedia;
     FragmentLikeBinding fragmentLikeBinding;
-
     SmallBang smallBang;
-
     Typeface typeface;
 
-    public LikeFragment() {
-        // Required empty public constructor
+    public static LikeFragment newInstance(IFavouriteMedia favourite) {
+        LikeFragment likeFragment = new LikeFragment();
+        favouriteMedia = favourite;
+        return likeFragment;
     }
 
     @Override
@@ -58,12 +60,14 @@ public class LikeFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         fragmentLikeBinding.viewpager.setAllowedSwipeDirection(SingleSideSwipeableViewPager.SwipeDirection.RIGHT);
-        fragmentLikeBinding.setViewController(new HomePageController(smallBang, fragmentLikeBinding));
+        fragmentLikeBinding.setViewController(new HomePageController(smallBang, fragmentLikeBinding,favouriteMedia));
         fragmentLikeBinding.setLikeStatus(new LikeStatus());
         fragmentLikeBinding.name.setTypeface(typeface);
         CustomLikePagerAdapter customLikeAdapter = new CustomLikePagerAdapter(getContext());
         fragmentLikeBinding.viewpager.setAdapter(customLikeAdapter);
 
     }
+
+
 }
 
