@@ -8,7 +8,7 @@ package profoodies.com.profoodies.home.viewmodel;
 
 import android.view.View;
 import profoodies.com.profoodies.home.follow.model.FollowStatus;
-import profoodies.com.profoodies.home.like.model.LikeStatus;
+import profoodies.com.profoodies.home.like.model.LikedStatus;
 import xyz.hanks.library.SmallBang;
 
 /**
@@ -35,16 +35,16 @@ public class HomePageController {
     /**
      * Trigger the event listener action for  profile edit button.
      *
-     * @param likeStatus Get the model of LikeFragment
+     * @param likedStatus Get the model of LikeFragment
      * @return View.OnClickListener OnClickListener of the profile edit click button
      */
 
-    public View.OnClickListener favBtnClick(final LikeStatus likeStatus) {
+    public View.OnClickListener favBtnClick(final LikedStatus likedStatus) {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 smallBang.bang(view);
-                likeStatus.setLike(true);
+                likedStatus.setLiked(true);
             }
         };
     }

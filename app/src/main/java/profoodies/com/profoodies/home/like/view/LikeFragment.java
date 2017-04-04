@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 
 import profoodies.com.profoodies.R;
 import profoodies.com.profoodies.databinding.FragmentLikeBinding;
-import profoodies.com.profoodies.home.like.model.LikeStatus;
+import profoodies.com.profoodies.home.like.model.LikedStatus;
 import profoodies.com.profoodies.home.viewmodel.HomePageController;
 import xyz.hanks.library.SmallBang;
 
@@ -49,7 +49,7 @@ public class LikeFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         fragmentLikeBinding.setViewController(new HomePageController(smallBang));
-        fragmentLikeBinding.setLikeStatus(new LikeStatus());
+        fragmentLikeBinding.setLikedStatus(new LikedStatus());
     }
 }
 
