@@ -85,10 +85,11 @@ public class SingleSideSwipeableViewPager extends ViewPager {
         this.direction = direction;
     }
 
+    /**
+     * declared enumeration for viewpager directions
+     */
     public enum SwipeDirection {
-        /**
-         * enumeration for viewpager directions
-         */
+
         ALL, LEFT, RIGHT, NONE;
     }
 }
