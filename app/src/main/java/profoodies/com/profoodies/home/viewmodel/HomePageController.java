@@ -29,7 +29,6 @@ public class HomePageController {
 
     SmallBang smallBang;
 
-
     FragmentLikeBinding fragmentLikeBinding;
 
     FragmentFollowBinding fragmentFollowBinding;
@@ -61,7 +60,8 @@ public class HomePageController {
      * @param fragmentFollowBinding
      * @param follow
      */
-    public HomePageController(SmallBang smallBang, FragmentFollowBinding fragmentFollowBinding, IFavouriteMedia follow) {
+    public HomePageController(SmallBang smallBang,
+                              FragmentFollowBinding fragmentFollowBinding, IFavouriteMedia follow) {
         /**
          * here constructor is set to smallbang and fragment following using this keyword
          */
@@ -151,7 +151,7 @@ public class HomePageController {
         });
     }
 
-      /**
+    /**
      * Get position of the Follower items in view pager
      *
      * @param i Position
