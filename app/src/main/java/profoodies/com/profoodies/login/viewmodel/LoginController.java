@@ -38,7 +38,7 @@ public class LoginController {
     private Context context;
 
     /**
-     * parametrized constructor
+     * Parametrized constructor
      *
      * @param activityLoginBinding reference for activity login binding
      */

@@ -15,8 +15,8 @@ import android.support.v7.app.AppCompatActivity;
 import profoodies.com.profoodies.login.view.ActivityLogin;
 
 /**
- * Show the splash image of the app and  if user not logged then they will be redirected to login
- * they will be redirected to home
+ * Show the splash image of the app and  if user not logged then they will be redirected to login,
+ * Otherwise will be redirected to home
  *
  * @author ContusTeam <developers@contus.in>
  * @version 1.0

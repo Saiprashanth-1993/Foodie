@@ -42,7 +42,7 @@ public class ActivityLogin extends AppCompatActivity {
 
 
         /**
-         * to get the view from screen and passing that to animation
+         * To get the view from screen and passing that to animation
          */
         RelativeLayout loginView = activityLoginBinding.rlLoginParent;
         startAnimation(loginView);
