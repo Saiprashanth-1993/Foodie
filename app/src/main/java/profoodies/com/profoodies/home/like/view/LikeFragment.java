@@ -34,8 +34,11 @@ import xyz.hanks.library.SmallBang;
 public class LikeFragment extends Fragment {
 
     private static IFavouriteMedia favouriteMedia;
+
     FragmentLikeBinding fragmentLikeBinding;
+
     SmallBang smallBang;
+
     Typeface typeface;
 
     public static LikeFragment newInstance(IFavouriteMedia favourite) {
@@ -52,15 +55,14 @@ public class LikeFragment extends Fragment {
         smallBang = SmallBang.attach2Window(getActivity());
 
         return fragmentLikeBinding.getRoot();
-
-
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         fragmentLikeBinding.viewpager.setAllowedSwipeDirection(SingleSideSwipeableViewPager.SwipeDirection.RIGHT);
-        fragmentLikeBinding.setViewController(new HomePageController(smallBang, fragmentLikeBinding,favouriteMedia));
+        fragmentLikeBinding
+                .setViewController(new HomePageController(smallBang, fragmentLikeBinding, favouriteMedia));
         fragmentLikeBinding.setLikeStatus(new LikeStatus());
         fragmentLikeBinding.name.setTypeface(typeface);
         CustomLikePagerAdapter customLikeAdapter = new CustomLikePagerAdapter(getContext());

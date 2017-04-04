@@ -58,6 +58,7 @@ public class HomePageController {
      *
      * @param smallBang
      * @param fragmentFollowBinding
+     * @param follow
      */
     public HomePageController(SmallBang smallBang, FragmentFollowBinding fragmentFollowBinding,IFavouriteMedia follow) {
         /**

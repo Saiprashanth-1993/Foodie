@@ -36,8 +36,8 @@ public class FollowFragment extends Fragment {
      * Activity FollowFragment Binding for initializing the layout as data binding.
      */
     FragmentFollowBinding fragmentFollowBinding;
-    SmallBang smallBang;
 
+    SmallBang smallBang;
 
     public static FollowFragment newInstance(IFavouriteMedia favourite) {
         FollowFragment followFragment = new FollowFragment();
@@ -58,7 +58,8 @@ public class FollowFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         fragmentFollowBinding.pager.setAllowedSwipeDirection(SingleSideSwipeableViewPager.SwipeDirection.RIGHT);
-        fragmentFollowBinding.setViewController(new HomePageController(smallBang, fragmentFollowBinding,favouriteMedia));
+        fragmentFollowBinding
+                .setViewController(new HomePageController(smallBang, fragmentFollowBinding,favouriteMedia));
         fragmentFollowBinding.setFollowStatus(new FollowStatus());
         CustomFollowAdapter customFollowAdapter = new CustomFollowAdapter(getContext());
         fragmentFollowBinding.pager.setAdapter(customFollowAdapter);
