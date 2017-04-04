@@ -85,6 +85,9 @@ public class HomepageFragment extends Fragment implements IFavouriteMedia {
         return fragmentList;
     }
 
+    /**
+     * To increase the coins count in the menu
+     */
     @Override
     public void favouriteOnClick() {
         int coinsValue;
