@@ -58,7 +58,6 @@ public class LoginController {
             public void onClick(View view) {
                 context = view.getContext();
                 if (isValid(view, userLogin.getUsername(), userLogin.getPassword())) {
-                    CustomUtils.showSnack(view, "Form Validated");
                     Intent myIntent = new Intent(context, HomeActivity.class);
                     context.startActivity(myIntent);
                 }
@@ -95,16 +94,16 @@ public class LoginController {
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(view.getContext());
 
                 // Setting Dialog Title
-                alertDialog.setTitle("Info");
+                alertDialog.setTitle(R.string.info_title);
 
                 // Setting Dialog Message
-                alertDialog.setMessage("Only Instagram Users are allowed");
+                alertDialog.setMessage(R.string.info_message);
 
                 // Setting Icon to Dialog
                 alertDialog.setIcon(R.drawable.ic_warning);
 
                 // Setting Positive  Button
-                alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                alertDialog.setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                     }
@@ -127,19 +126,19 @@ public class LoginController {
         boolean validationStatus = true;
         if (TextUtils.isEmpty(userEmail)) {
             validationStatus = false;
-            CustomUtils.showSnack(view, "username field should not be empty");
+            CustomUtils.showSnack(view, context.getString(R.string.username_empty));
             activityLoginBinding.etUsername.requestFocus();
         } else if (TextUtils.isEmpty(password)) {
             validationStatus = false;
-            CustomUtils.showSnack(view, "password field should not be empty");
+            CustomUtils.showSnack(view, context.getString(R.string.password_empty));
             activityLoginBinding.etPassword.requestFocus();
         } else if (!Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()) {
             validationStatus = false;
-            CustomUtils.showSnack(view, "Please make sure email id is valid");
+            CustomUtils.showSnack(view, context.getString(R.string.error_email));
             activityLoginBinding.etUsername.requestFocus();
         } else if (password.length() < 6) {
             validationStatus = false;
-            CustomUtils.showSnack(view, "Please make sure password should have max of 6 character");
+            CustomUtils.showSnack(view, context.getString(R.string.error_password));
             activityLoginBinding.etPassword.requestFocus();
         }
         return validationStatus;

@@ -17,5 +17,12 @@
     <string name="skip">Skip</string>
     <string name="continues">Continue</string>
     <string name="next">Next</string>
+    <string name="info_message">Only Instagram Users are allowed</string>
+    <string name="info_title">Info</string>
+    <string name="ok_button">OK</string>
+    <string name="username_empty">username field should not be empty</string>
+    <string name="password_empty">password field should not be empty</string>
+    <string name="error_email">Please make sure email id is valid</string>
+    <string name="error_password">Please make sure password should have max of 6 character</string>
 
 </resources>
