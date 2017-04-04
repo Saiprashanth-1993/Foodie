@@ -34,6 +34,7 @@ public class LoginController {
      * Reference for the LoginActivity Databinding
      */
     ActivityLoginBinding activityLoginBinding;
+
     private Context context;
 
     /**
