@@ -34,7 +34,7 @@ public class HomepageAdapter extends FragmentStatePagerAdapter {
     /**
      * Instantiates a new adapter dashboard view.
      *
-     * @param fm the Instance of the FragmentManager.
+     * @param fm Instance of the FragmentManager.
      */
 
     public HomepageAdapter(FragmentManager fm) {

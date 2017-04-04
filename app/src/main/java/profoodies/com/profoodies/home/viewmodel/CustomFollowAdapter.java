@@ -40,7 +40,8 @@ public class CustomFollowAdapter extends PagerAdapter {
     }
 
     /**
-     * to return number of pages in the pager
+     * To return number of pages in the pager
+     *
      * @return
      */
     @Override

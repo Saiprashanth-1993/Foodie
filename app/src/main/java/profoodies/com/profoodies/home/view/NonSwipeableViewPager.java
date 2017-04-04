@@ -85,7 +85,7 @@ public class NonSwipeableViewPager extends ViewPager {
     }
 
     /**
-     * down one is added for smooth scrolling
+     * Down one is added for smooth scrolling
      */
     public class MyScroller extends Scroller {
 

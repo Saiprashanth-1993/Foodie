@@ -58,10 +58,10 @@ public class HomeActivity extends AppCompatActivity
             CoordinatorLayout coordinatorLayout = activityHomeBinding.parent;
 
             /**
-             * overriding onDrawer Slide, to move the layout when navigation drawer clicked
+             * Overriding onDrawer Slide, to move the layout when navigation drawer clicked
              *
              * @param drawerView Navigation drawer view
-             * @param slideOffset moving offset position
+             * @param slideOffset Moving offset position
              */
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset) {
@@ -113,7 +113,8 @@ public class HomeActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
 
         /**
-         *Handle action bar item clicks here. The action bar will automatically handle clicks on the Home/Up button.
+         *Handle action bar item clicks here.
+         *The action bar will automatically handle clicks on the Home/Up button.
          */
         int i = item.getItemId();
         if (i == android.R.id.home) {

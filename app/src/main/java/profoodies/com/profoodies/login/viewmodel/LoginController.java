@@ -34,9 +34,9 @@ public class LoginController {
     ActivityLoginBinding activityLoginBinding;
 
     /**
-     *  parametrized constructor
+     *  Parametrized constructor
      *
-     * @param activityLoginBinding reference for activity login binding
+     * @param activityLoginBinding Reference for activity login binding
      */
     public LoginController(ActivityLoginBinding activityLoginBinding){
         this.activityLoginBinding = activityLoginBinding;
@@ -68,7 +68,7 @@ public class LoginController {
      * @param view  Used to show the Snack Bar
      * @param userEmail Validate the userEmail.
      * @param password Validate the password.
-     * @return true when the given field is not empty.
+     * @return True when the given field is not empty.
      */
     public boolean isValid(View view, String userEmail, String password) {
         boolean validationStatus = true;

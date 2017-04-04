@@ -48,8 +48,8 @@ public class CustomLikePagerAdapter extends PagerAdapter {
     }
 
     /**
-     * to return number of pages in the pager
-     * @return 
+     * To return number of pages in the pager
+     * @return
      */
     @Override
     public int getCount() {

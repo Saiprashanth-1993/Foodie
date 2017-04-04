@@ -16,5 +16,4 @@ import android.databinding.BaseObservable;
  */
 
 public class HomePageModel extends BaseObservable{
-
 }

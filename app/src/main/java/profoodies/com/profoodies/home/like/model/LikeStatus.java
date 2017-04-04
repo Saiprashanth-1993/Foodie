@@ -33,6 +33,6 @@ public class LikeStatus extends BaseObservable {
      */
     public void setLiked(boolean toEditOrSave) {
         this.isLiked = toEditOrSave;
-        notifyPropertyChanged(BR.like);
+        notifyPropertyChanged(BR.liked);
     }
 }

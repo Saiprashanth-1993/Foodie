@@ -23,7 +23,7 @@ public class CustomUtils {
     }
 
     /**
-     * show the snackbar
+     * Show the snackbar
      *
      * @param view View of the activity or fragment
      * @param message Message to show in Snack bar

@@ -37,7 +37,7 @@ public class Constants {
     public static final String NAME_NAVIGATION_SETTINGS = "Settings";
 
     /**
-     * private constructor to hide the implicit public one.
+     * Private constructor to hide the implicit public one.
      */
     private Constants() {
     }

@@ -63,6 +63,12 @@ public class LikeFragment extends Fragment {
         return fragmentLikeBinding.getRoot();
     }
 
+    /**
+     *
+     *
+     * @param view
+     * @param savedInstanceState
+     */
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

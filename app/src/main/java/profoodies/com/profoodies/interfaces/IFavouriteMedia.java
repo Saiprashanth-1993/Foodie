@@ -16,7 +16,7 @@ package profoodies.com.profoodies.interfaces;
 public interface IFavouriteMedia {
 
     /**
-     *method to implement for the callback during OnClick
+     *Method to implement for the callback during OnClick
      */
     void favouriteOnClick();
 }

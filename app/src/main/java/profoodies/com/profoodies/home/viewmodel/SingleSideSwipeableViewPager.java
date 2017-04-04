@@ -38,20 +38,14 @@ public class SingleSideSwipeableViewPager extends ViewPager {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (this.isSwipeAllowed(event)) {
-            return super.onTouchEvent(event);
-        }
+        return this.isSwipeAllowed(event) && super.onTouchEvent(event);
 
-        return false;
     }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
-        if (this.isSwipeAllowed(event)) {
-            return super.onInterceptTouchEvent(event);
-        }
+        return this.isSwipeAllowed(event) && super.onInterceptTouchEvent(event);
 
-        return false;
     }
 
     private boolean isSwipeAllowed(MotionEvent event) {
@@ -86,7 +80,7 @@ public class SingleSideSwipeableViewPager extends ViewPager {
     }
 
     /**
-     * declared enumeration for viewpager directions
+     * Declared enumeration for viewpager directions
      */
     public enum SwipeDirection {
 
