@@ -25,12 +25,15 @@ import xyz.hanks.library.SmallBangListener;
  */
 
 public class HomePageController {
+
     SmallBang smallBang;
+
     FragmentLikeBinding fragmentLikeBinding;
+
     FragmentFollowBinding fragmentFollowBinding;
 
     /**
-     *Separate Constructor of Home Page Controller which can invoke the method directly to activity
+     * Separate Constructor of Home Page Controller which can invoke the method directly to activity
      * Smallbang is used for button animation
      *
      * @param smallBang
@@ -45,7 +48,7 @@ public class HomePageController {
     }
 
     /**
-     *Separate Constructor of Home Page Controller which can invoke the method directly to activity
+     * Separate Constructor of Home Page Controller which can invoke the method directly to activity
      * Smallbang is used for button animation
      *
      * @param smallBang
@@ -83,18 +86,18 @@ public class HomePageController {
      *
      * @param view
      */
-    public void likeBtn(View view){
+    public void likeBtn(View view) {
         smallBang.bang(view);
         smallBang.setmListener(new SmallBangListener() {
             @Override
 
             public void onAnimationStart() {
-            //this method is used to start the animation manually
+                //this method is used to start the animation manually
             }
 
             @Override
             public void onAnimationEnd() {
-                fragmentLikeBinding.viewpager.setCurrentItem(getLikeItem(+1),true);
+                fragmentLikeBinding.viewpager.setCurrentItem(getLikeItem(+1), true);
                 fragmentLikeBinding.heart.setImageResource(R.drawable.heart_round);
             }
         });
@@ -123,19 +126,19 @@ public class HomePageController {
      *
      * @param view
      */
-    public void followBtn(View view){
+    public void followBtn(View view) {
         smallBang.bang(view);
         smallBang.setmListener(new SmallBangListener() {
             @Override
 
             public void onAnimationStart() {
-            //this method is used for smallbang animation to start the action manually
+                //this method is used for smallbang animation to start the action manually
 
             }
 
             @Override
             public void onAnimationEnd() {
-                fragmentFollowBinding.pager.setCurrentItem(getFollowItem(+1),true);
+                fragmentFollowBinding.pager.setCurrentItem(getFollowItem(+1), true);
                 fragmentFollowBinding.fheart.setImageResource(R.drawable.follow);
             }
         });

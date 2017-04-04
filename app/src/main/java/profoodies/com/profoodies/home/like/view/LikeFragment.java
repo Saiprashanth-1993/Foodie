@@ -33,7 +33,9 @@ import xyz.hanks.library.SmallBang;
 public class LikeFragment extends Fragment {
 
     FragmentLikeBinding fragmentLikeBinding;
+
     SmallBang smallBang;
+
     Typeface typeface;
 
     public LikeFragment() {

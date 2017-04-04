@@ -22,7 +22,6 @@ import profoodies.com.profoodies.R;
  * @version 1.0
  */
 
-
 public class CustomFollowAdapter extends PagerAdapter {
 
     Context context;

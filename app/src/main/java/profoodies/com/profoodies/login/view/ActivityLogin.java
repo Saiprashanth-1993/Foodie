@@ -28,7 +28,6 @@ import profoodies.com.profoodies.login.viewmodel.LoginController;
  */
 public class ActivityLogin extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -22,8 +22,8 @@ import android.view.MotionEvent;
 public class SingleSideSwipeableViewPager extends ViewPager {
 
     private float initialXValue;
-    private SwipeDirection direction;
 
+    private SwipeDirection direction;
 
     /**
      * public Constructor to pass context and attribute
@@ -86,6 +86,9 @@ public class SingleSideSwipeableViewPager extends ViewPager {
     }
 
     public enum SwipeDirection {
+        /**
+         * enumeration for viewpager directions
+         */
         ALL, LEFT, RIGHT, NONE;
     }
 }

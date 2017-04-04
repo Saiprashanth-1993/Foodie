@@ -5,6 +5,7 @@
  */
 
 package profoodies.com.profoodies.utils;
+
 import android.support.design.widget.Snackbar;
 import android.view.View;
 
