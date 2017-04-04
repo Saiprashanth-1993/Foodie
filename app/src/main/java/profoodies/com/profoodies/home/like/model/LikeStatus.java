@@ -21,18 +21,18 @@ import profoodies.com.profoodies.BR;
 
 public class LikeStatus extends BaseObservable {
 
-    private boolean isLike = false;
+    private boolean isLiked = false;
 
     @Bindable
-    public boolean isLike() {
-        return isLike;
+    public boolean isLiked() {
+        return isLiked;
     }
 
     /**
-     * Sets {@link #isLike}
+     * Sets {@link #isLiked}
      */
     public void setLike(boolean toEditOrSave) {
-        this.isLike = toEditOrSave;
+        this.isLiked = toEditOrSave;
         notifyPropertyChanged(BR.like);
     }
 }

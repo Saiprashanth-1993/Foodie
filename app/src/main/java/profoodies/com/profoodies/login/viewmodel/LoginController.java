@@ -109,7 +109,6 @@ public class LoginController {
                         dialog.dismiss();
                     }
                 });
-
                 alertDialog.show();
 
             }

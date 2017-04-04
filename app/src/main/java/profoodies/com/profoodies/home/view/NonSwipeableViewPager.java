@@ -27,7 +27,7 @@ public class NonSwipeableViewPager extends ViewPager {
     /**
      * Constructor of Non Swipeable Viewpager which can invoke the method directly to activity
      *
-     * @param context            Context of a Fragment
+     * @param context Context of a Fragment
      */
     public NonSwipeableViewPager(Context context) {
         super(context);
@@ -37,8 +37,8 @@ public class NonSwipeableViewPager extends ViewPager {
     /**
      * Constructor of Non Swipeable Viewpager which can invoke the method directly to activity
      *
-     * @param context            Context of a Fragment
-     * @param attrs
+     * @param context Context of a Fragment
+     * @param attrs   Attributes of the NonSwipeable View pager
      */
     public NonSwipeableViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -48,30 +48,27 @@ public class NonSwipeableViewPager extends ViewPager {
     /**
      * Never allow swiping to switch between pages
      *
-     * @param event
-     * @return
+     * @param event To Captures the Motion Event
+     * @return boolean
      */
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
-
         return false;
     }
 
     /**
      * Never allow swiping to switch between pages
      *
-     * @param event
-     * @return
+     * @param event TO Captures the MotionEvent
+     * @return Boolean
      */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-
         return false;
     }
 
-
     /**
-     *
+     * To Set up the View Pager with scroll bar
      */
     private void setMyScroller() {
         try {
@@ -85,7 +82,7 @@ public class NonSwipeableViewPager extends ViewPager {
     }
 
     /**
-     * down one is added for smooth scrolling
+     * Down one is added for smooth scrolling
      */
     public class MyScroller extends Scroller {
 

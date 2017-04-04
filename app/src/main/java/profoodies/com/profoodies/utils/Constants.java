@@ -7,11 +7,12 @@
 package profoodies.com.profoodies.utils;
 
 /**
+ * To hold the Constants of the Application
+ *
  * @author ContusTeam <developers@contus.in>
  * @version 1.0
  */
 public class Constants {
-
 
     /**
      * Constant for GET COINS FRAGMENT

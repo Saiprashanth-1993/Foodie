@@ -41,7 +41,8 @@ public class CustomAdapter extends PagerAdapter {
 
     /**
      * to return number of pages in the pager
-     * @return
+     *
+     * @return count value
      */
     @Override
     public int getCount() {

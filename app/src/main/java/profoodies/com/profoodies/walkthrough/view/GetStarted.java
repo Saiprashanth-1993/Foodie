@@ -18,7 +18,7 @@ import profoodies.com.profoodies.walkthrough.viewmodel.GetStartedAdapter;
 import profoodies.com.profoodies.walkthrough.viewmodel.ViewController;
 
 /**
- * Activity for Get started, to display the tutorial to the user
+ * Activity for Get started, to display the tutorial to the new user
  *
  * @author ContusTeam <developers@contus.in>
  * @version 1.0

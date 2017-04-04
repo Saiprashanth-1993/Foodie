@@ -7,7 +7,6 @@
 package profoodies.com.profoodies.home.viewmodel;
 
 import android.view.View;
-
 import profoodies.com.profoodies.home.follow.model.FollowStatus;
 import profoodies.com.profoodies.home.like.model.LikeStatus;
 import xyz.hanks.library.SmallBang;
@@ -24,7 +23,7 @@ public class HomePageController {
     SmallBang smallBang;
 
     /**
-     *Constructor of Home Page Controller which can invoke the method directly to activity
+     * Constructor of Home Page Controller which can invoke the method directly to activity
      * Smallbang is used for button animation
      *
      * @param smallBang
@@ -44,7 +43,6 @@ public class HomePageController {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 smallBang.bang(view);
                 likeStatus.setLike(true);
             }
@@ -61,7 +59,6 @@ public class HomePageController {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 smallBang.bang(view);
                 followStatus.setFollowed(true);
             }

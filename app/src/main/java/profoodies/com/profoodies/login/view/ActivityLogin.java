@@ -59,7 +59,7 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     /**
-     * To Handle the on Back Pressed
+     * To Close the App when on Back Pressed
      */
     @Override
     public void onBackPressed() {

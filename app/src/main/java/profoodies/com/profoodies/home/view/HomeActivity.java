@@ -48,7 +48,7 @@ public class HomeActivity extends AppCompatActivity
         getSupportActionBar().setDisplayShowTitleEnabled(true);
 
         /**
-         * for customizing the action bar drawer toggle to overriding default behaviour
+         * For customizing the action bar drawer toggle to overriding default behaviour
          */
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, activityHomeBinding.drawerLayout,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
@@ -171,7 +171,7 @@ public class HomeActivity extends AppCompatActivity
         }
 
         /**
-         * close the navigation view after loaded the fragment
+         * Close the navigation view after loaded the fragment
          */
         activityHomeBinding.drawerLayout.closeDrawer(GravityCompat.START);
     }
