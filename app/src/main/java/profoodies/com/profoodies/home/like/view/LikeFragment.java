@@ -42,7 +42,7 @@ public class LikeFragment extends Fragment {
     Typeface typeface;
 
     /**
-     *Constructor to initiate the instance
+     * Constructor to initiate the instance
      *
      * @param favourite
      * @return
@@ -73,9 +73,6 @@ public class LikeFragment extends Fragment {
         fragmentLikeBinding.name.setTypeface(typeface);
         CustomLikePagerAdapter customLikeAdapter = new CustomLikePagerAdapter(getContext());
         fragmentLikeBinding.viewpager.setAdapter(customLikeAdapter);
-
     }
-
-
 }
 

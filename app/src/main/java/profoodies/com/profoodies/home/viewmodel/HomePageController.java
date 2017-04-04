@@ -81,7 +81,7 @@ public class HomePageController {
             @Override
             public void onClick(View view) {
                 favouriteMedia.favouriteOnClick();
-                likeModel.setLike(true);
+                likeModel.setLiked(true);
                 likeBtn(view);
 
             }

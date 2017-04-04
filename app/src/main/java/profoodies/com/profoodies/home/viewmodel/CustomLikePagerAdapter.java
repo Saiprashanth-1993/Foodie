@@ -16,13 +16,17 @@ import android.widget.RelativeLayout;
 import profoodies.com.profoodies.R;
 
 /**
- * Created by Contus team on 31/3/17.
+ * An adapter used to inflate a view in a view pager
+ *
+ * @author ContusTeam <developers@contus.in>
+ * @version 1.0
  */
 
 public class CustomLikePagerAdapter extends PagerAdapter {
-    Context context;
 
-    LayoutInflater inflater;
+    private Context context;
+
+    private LayoutInflater inflater;
 
     /**
      * Constructor of Custom Adapter which can invoke the method directly to activity
@@ -45,7 +49,7 @@ public class CustomLikePagerAdapter extends PagerAdapter {
 
     /**
      * to return number of pages in the pager
-     * @return
+     * @return 
      */
     @Override
     public int getCount() {
