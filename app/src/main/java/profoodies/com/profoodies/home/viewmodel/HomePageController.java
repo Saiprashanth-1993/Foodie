@@ -11,8 +11,8 @@ import android.view.View;
 import profoodies.com.profoodies.R;
 import profoodies.com.profoodies.databinding.FragmentFollowBinding;
 import profoodies.com.profoodies.databinding.FragmentLikeBinding;
-import profoodies.com.profoodies.home.follow.model.FollowModel;
-import profoodies.com.profoodies.home.like.model.LikeModel;
+import profoodies.com.profoodies.home.follow.model.FollowStatus;
+import profoodies.com.profoodies.home.like.model.LikeStatus;
 import xyz.hanks.library.SmallBang;
 import xyz.hanks.library.SmallBangListener;
 
@@ -69,12 +69,12 @@ public class HomePageController {
      * @return View.OnClickListener OnClickListener of the profile edit click button
      */
 
-    public View.OnClickListener favBtnClick(final LikeModel likeModel) {
+    public View.OnClickListener favBtnClick(final LikeStatus likeModel) {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                likeModel.setToLikeOrUnlike(true);
+                likeModel.setLike(true);
                 likeBtn(view);
 
             }
@@ -106,15 +106,15 @@ public class HomePageController {
     /**
      * Trigger the event listener action for  profile edit button.
      *
-     * @param followModel Get the model of Follow Fragment
+     * @param followStatus Get the model of Follow Fragment
      * @return View.OnClickListener OnClickListener of the profile edit click button
      */
-    public View.OnClickListener followBtnClick(final FollowModel followModel) {
+    public View.OnClickListener followBtnClick(final FollowStatus followStatus) {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                followModel.setToFollowOrUnfollow(true);
+                followStatus.setFollowed(true);
                 followBtn(view);
 
             }

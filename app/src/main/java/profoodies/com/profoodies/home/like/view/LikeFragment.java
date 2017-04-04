@@ -17,7 +17,7 @@ import android.view.ViewGroup;
 
 import profoodies.com.profoodies.R;
 import profoodies.com.profoodies.databinding.FragmentLikeBinding;
-import profoodies.com.profoodies.home.like.model.LikeModel;
+import profoodies.com.profoodies.home.like.model.LikeStatus;
 import profoodies.com.profoodies.home.viewmodel.CustomLikePagerAdapter;
 import profoodies.com.profoodies.home.viewmodel.HomePageController;
 import profoodies.com.profoodies.home.viewmodel.SingleSideSwipeableViewPager;
@@ -59,7 +59,7 @@ public class LikeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         fragmentLikeBinding.viewpager.setAllowedSwipeDirection(SingleSideSwipeableViewPager.SwipeDirection.RIGHT);
         fragmentLikeBinding.setViewController(new HomePageController(smallBang, fragmentLikeBinding));
-        fragmentLikeBinding.setLikeInfo(new LikeModel());
+        fragmentLikeBinding.setLikeStatus(new LikeStatus());
         fragmentLikeBinding.name.setTypeface(typeface);
         CustomLikePagerAdapter customLikeAdapter = new CustomLikePagerAdapter(getContext());
         fragmentLikeBinding.viewpager.setAdapter(customLikeAdapter);

@@ -55,10 +55,9 @@ public class HomepageFragment extends Fragment {
 
         this.menu = menu;
         inflater.inflate(R.menu.coins_counter, menu);
-        String coins = menu.getItem(0).getTitle().toString();
-        int coinsValue = Integer.parseInt(coins);
-        coinsValue++;
-        menu.getItem(0).setTitle(coinsValue + "Coins");
+        /*coins = menu.getItem(0).getTitle().toString();
+        coinsValue = Integer.parseInt(coins);
+        coinsValue++;*/
         super.onCreateOptionsMenu(menu, inflater);
     }
 

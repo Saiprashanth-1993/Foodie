@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 
 import profoodies.com.profoodies.R;
 import profoodies.com.profoodies.databinding.FragmentFollowBinding;
-import profoodies.com.profoodies.home.follow.model.FollowModel;
+import profoodies.com.profoodies.home.follow.model.FollowStatus;
 import profoodies.com.profoodies.home.viewmodel.CustomFollowAdapter;
 import profoodies.com.profoodies.home.viewmodel.HomePageController;
 import profoodies.com.profoodies.home.viewmodel.SingleSideSwipeableViewPager;
@@ -55,7 +55,7 @@ public class FollowFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         fragmentFollowBinding.pager.setAllowedSwipeDirection(SingleSideSwipeableViewPager.SwipeDirection.RIGHT);
         fragmentFollowBinding.setViewController(new HomePageController(smallBang, fragmentFollowBinding));
-        fragmentFollowBinding.setFollowInfo(new FollowModel());
+        fragmentFollowBinding.setFollowStatus(new FollowStatus());
         CustomFollowAdapter customFollowAdapter = new CustomFollowAdapter(getContext());
         fragmentFollowBinding.pager.setAdapter(customFollowAdapter);
     }
