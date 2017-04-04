@@ -6,8 +6,10 @@
 
 package profoodies.com.profoodies.utils;
 
+import android.app.Activity;
 import android.support.design.widget.Snackbar;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 
 /**
  * Common utils used for the application
@@ -25,12 +27,27 @@ public class CustomUtils {
     /**
      * show the snackbar
      *
-     * @param view View of the activity or fragment
+     * @param view    View of the activity or fragment
      * @param message Message to show in Snack bar
      */
-    public static void showSnack(View view, String message){
+    public static void showSnack(View view, String message) {
         Snackbar snackbar = Snackbar
-                .make(view,message,Snackbar.LENGTH_LONG);
+                .make(view, message, Snackbar.LENGTH_LONG);
         snackbar.show();
+    }
+
+    /**
+     * Use this method to hide the keyboard if it is showing
+     *
+     * @param activity current activity
+     */
+    public static void hideSoftKeyboard(Activity activity) {
+
+        View activeView = activity.getCurrentFocus();
+        if (activeView != null) {
+            InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(Activity
+                    .INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(activeView.getWindowToken(), 0);
+        }
     }
 }

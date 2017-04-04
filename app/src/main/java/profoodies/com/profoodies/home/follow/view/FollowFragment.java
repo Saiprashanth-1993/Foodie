@@ -17,7 +17,7 @@ import android.view.ViewGroup;
 
 import profoodies.com.profoodies.R;
 import profoodies.com.profoodies.databinding.FragmentFollowBinding;
-import profoodies.com.profoodies.home.follow.model.FollowModel;
+import profoodies.com.profoodies.home.follow.model.FollowStatus;
 import profoodies.com.profoodies.home.viewmodel.CustomAdapter;
 import profoodies.com.profoodies.home.viewmodel.HomePageController;
 import xyz.hanks.library.SmallBang;
@@ -55,7 +55,7 @@ public class FollowFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         ViewPager pager = (ViewPager) view.findViewById(R.id.pager);
         fragmentFollowBinding.setViewController(new HomePageController(smallBang));
-        fragmentFollowBinding.setFollowInfo(new FollowModel());
+        fragmentFollowBinding.setFollowStatus(new FollowStatus());
         CustomAdapter customAdapter = new CustomAdapter(getContext());
         pager.setAdapter(customAdapter);
     }

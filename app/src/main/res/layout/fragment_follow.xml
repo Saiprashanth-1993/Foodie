@@ -4,8 +4,8 @@
 
     <data>
         <variable
-            name="FollowInfo"
-            type="profoodies.com.profoodies.home.follow.model.FollowModel"/>
+            name="FollowStatus"
+            type="profoodies.com.profoodies.home.follow.model.FollowStatus"/>
 
         <variable
             name="viewController"
@@ -68,8 +68,8 @@
                 android:clickable="true"
                 android:contentDescription="@null"
                 android:foreground="?attr/selectableItemBackground"
-                android:onClick="@{viewController.followBtnClick(FollowInfo)}"
-                android:src="@{FollowInfo.toFollowOrUnfollow ? @drawable/heart_round_pink : @drawable/heart_round}"
+                android:onClick="@{viewController.followBtnClick(FollowStatus)}"
+                android:src="@{FollowStatus.followed  ? @drawable/heart_round_pink : @drawable/heart_round}"
                 app:civ_border_color="@android:color/white"
                 app:civ_border_width="0dp" />
 

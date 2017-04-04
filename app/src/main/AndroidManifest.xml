@@ -18,7 +18,8 @@
         <activity
             android:name=".login.view.ActivityLogin"
             android:screenOrientation="portrait"
-            android:theme="@style/noActionBarLight" />
+            android:theme="@style/noActionBarLight"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".home.view.HomeActivity"
             android:label="@string/title_activity_home"
@@ -28,7 +29,7 @@
             android:name=".walkthrough.view.GetStarted"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait"
-            android:theme="@style/noActionBarLight">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

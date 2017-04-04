@@ -7,10 +7,7 @@
 package profoodies.com.profoodies.login.view;
 
 import android.databinding.DataBindingUtil;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.Animation;
@@ -43,28 +40,11 @@ public class ActivityLogin extends AppCompatActivity {
         activityLoginBinding.setModel(new UserLogin());
         activityLoginBinding.setController(new LoginController(activityLoginBinding));
 
-        final Drawable errorIcon = ResourcesCompat.getDrawable(getResources(), R.drawable.ic_warning, null);
-        errorIcon.setBounds(new Rect(0, 0, errorIcon.getIntrinsicWidth(), errorIcon.getIntrinsicHeight()));
-        // set focus listener to info message
-        activityLoginBinding.etUsername.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            /**
-             *  onFocusChange is used to detect the focus change
-             *
-             * @param v view
-             * @param hasFocus if the element has focus or not
-             */
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    activityLoginBinding.etUsername.setError("Only Instagram Users are allowed", errorIcon);
-                }
-            }
-        });
 
         /**
          * to get the view from screen and passing that to animation
          */
-        RelativeLayout loginView = activityLoginBinding.rlLogin;
+        RelativeLayout loginView = activityLoginBinding.rlLoginParent;
         startAnimation(loginView);
     }
 
@@ -76,5 +56,13 @@ public class ActivityLogin extends AppCompatActivity {
     public void startAnimation(View view) {
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom);
         view.startAnimation(animation);
+    }
+
+    /**
+     * To Handle the on Back Pressed
+     */
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
     }
 }

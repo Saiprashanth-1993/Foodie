@@ -12,26 +12,27 @@ import android.databinding.Bindable;
 import profoodies.com.profoodies.BR;
 
 /**
- * To set a boolean value for like button
+ * To check the like status
+ * Like - To like the instagram posts
  *
  * @author ContusTeam <developers@contus.in>
  * @version 1.0
  */
 
-public class LikeModel extends BaseObservable {
+public class LikeStatus extends BaseObservable {
 
-    private boolean isToLikeOrUnlike = false;
+    private boolean isLike = false;
 
     @Bindable
-    public boolean isToLikeOrUnlike() {
-        return isToLikeOrUnlike;
+    public boolean isLike() {
+        return isLike;
     }
 
     /**
-     * Sets {@link #isToLikeOrUnlike}
+     * Sets {@link #isLike}
      */
-    public void setToLikeOrUnlike(boolean toEditOrSave) {
-        this.isToLikeOrUnlike = toEditOrSave;
-        notifyPropertyChanged(BR.toLikeOrUnlike);
+    public void setLike(boolean toEditOrSave) {
+        this.isLike = toEditOrSave;
+        notifyPropertyChanged(BR.like);
     }
 }

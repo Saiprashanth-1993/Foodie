@@ -4,8 +4,8 @@
 
     <data>
         <variable
-            name="LikeInfo"
-            type="profoodies.com.profoodies.home.like.model.LikeModel"/>
+            name="LikeStatus"
+            type="profoodies.com.profoodies.home.like.model.LikeStatus"/>
 
         <variable
             name="viewController"
@@ -134,8 +134,8 @@
                 android:clickable="true"
                 android:contentDescription="@null"
                 android:foreground="?attr/selectableItemBackground"
-                android:onClick="@{viewController.favBtnClick(LikeInfo)}"
-                android:src="@{LikeInfo.toLikeOrUnlike ? @drawable/heart_round_pink : @drawable/heart_round}"
+                android:onClick="@{viewController.favBtnClick(LikeStatus)}"
+                android:src="@{LikeStatus.like ? @drawable/heart_round_pink : @drawable/heart_round}"
                 app:civ_border_color="@android:color/white"
                 app:civ_border_width="0dp" />
 
