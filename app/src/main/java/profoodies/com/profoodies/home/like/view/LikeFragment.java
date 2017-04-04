@@ -41,6 +41,12 @@ public class LikeFragment extends Fragment {
 
     Typeface typeface;
 
+    /**
+     *Constructor to initiate the instance
+     *
+     * @param favourite
+     * @return
+     */
     public static LikeFragment newInstance(IFavouriteMedia favourite) {
         LikeFragment likeFragment = new LikeFragment();
         favouriteMedia = favourite;

@@ -35,10 +35,17 @@ public class FollowFragment extends Fragment {
     /**
      * Activity FollowFragment Binding for initializing the layout as data binding.
      */
+
     FragmentFollowBinding fragmentFollowBinding;
 
     SmallBang smallBang;
 
+    /**
+     * Constructor to initiate the instance
+     *
+     * @param favourite
+     * @return
+     */
     public static FollowFragment newInstance(IFavouriteMedia favourite) {
         FollowFragment followFragment = new FollowFragment();
         favouriteMedia = favourite;
