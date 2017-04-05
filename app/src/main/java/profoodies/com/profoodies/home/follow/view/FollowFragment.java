@@ -32,6 +32,7 @@ import xyz.hanks.library.SmallBang;
 public class FollowFragment extends Fragment {
 
     private static IFavouriteMedia favouriteMedia;
+
     /**
      * Activity FollowFragment Binding for initializing the layout as data binding.
      */
@@ -70,7 +71,7 @@ public class FollowFragment extends Fragment {
     }
 
     /**
-     *Once view is inflated the funtionality is implemented
+     * Once view is inflated the funtionality is implemented
      *
      * @param view
      * @param savedInstanceState
@@ -80,7 +81,7 @@ public class FollowFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         fragmentFollowBinding.pager.setAllowedSwipeDirection(SingleSideSwipeableViewPager.SwipeDirection.RIGHT);
         fragmentFollowBinding
-                .setViewController(new HomePageController(smallBang, fragmentFollowBinding,favouriteMedia));
+                .setViewController(new HomePageController(smallBang, fragmentFollowBinding, favouriteMedia));
         fragmentFollowBinding.setFollowStatus(new FollowStatus());
         CustomFollowAdapter customFollowAdapter = new CustomFollowAdapter(getContext());
         fragmentFollowBinding.pager.setAdapter(customFollowAdapter);

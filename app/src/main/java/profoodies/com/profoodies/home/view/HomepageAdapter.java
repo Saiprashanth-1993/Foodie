@@ -25,6 +25,7 @@ public class HomepageAdapter extends FragmentStatePagerAdapter {
      * Title of the fragment list.
      */
     private String[] mTitle;
+
     /**
      * Fragment list Which contains the fragments on the adapter.
      */

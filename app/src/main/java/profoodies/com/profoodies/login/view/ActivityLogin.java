@@ -19,7 +19,6 @@ import profoodies.com.profoodies.databinding.ActivityLoginBinding;
 import profoodies.com.profoodies.login.model.UserLogin;
 import profoodies.com.profoodies.login.viewmodel.LoginController;
 
-
 /**
  * Activity for login, to login the user with Instagram Username and password Authentication
  *
@@ -42,7 +41,6 @@ public class ActivityLogin extends AppCompatActivity {
          */
         activityLoginBinding.setModel(new UserLogin());
         activityLoginBinding.setController(new LoginController(activityLoginBinding));
-
 
         /**
          * To get the view from screen and passing that to animation

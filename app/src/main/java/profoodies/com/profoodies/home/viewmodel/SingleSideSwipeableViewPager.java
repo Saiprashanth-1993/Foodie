@@ -43,14 +43,14 @@ public class SingleSideSwipeableViewPager extends ViewPager {
     }
 
     @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        return this.isSwipeAllowed(event) && super.onTouchEvent(event);
+    public boolean onInterceptTouchEvent(MotionEvent event) {
+        return this.isSwipeAllowed(event) && super.onInterceptTouchEvent(event);
 
     }
 
     @Override
-    public boolean onInterceptTouchEvent(MotionEvent event) {
-        return this.isSwipeAllowed(event) && super.onInterceptTouchEvent(event);
+    public boolean onTouchEvent(MotionEvent event) {
+        return this.isSwipeAllowed(event) && super.onTouchEvent(event);
 
     }
 
@@ -75,7 +75,8 @@ public class SingleSideSwipeableViewPager extends ViewPager {
         if (event.getAction() == MotionEvent.ACTION_MOVE) {
             try {
                 float diffX = event.getX() - initialXValue;
-                if ((diffX > 0 && direction == SwipeDirection.RIGHT)||(diffX < 0 && direction == SwipeDirection.LEFT)) {
+                if ((diffX > 0 && direction == SwipeDirection.RIGHT) || (diffX < 0 && direction == SwipeDirection
+                        .LEFT)) {
                     // swipe from left to right detected
                     return false;
                 }

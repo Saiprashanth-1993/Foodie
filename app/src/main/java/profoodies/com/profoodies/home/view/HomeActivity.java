@@ -23,6 +23,7 @@ import android.view.View;
 
 import profoodies.com.profoodies.R;
 import profoodies.com.profoodies.databinding.ActivityHomeBinding;
+import profoodies.com.profoodies.interfaces.IFavouriteMedia;
 import profoodies.com.profoodies.utils.Constants;
 
 /**
@@ -32,7 +33,7 @@ import profoodies.com.profoodies.utils.Constants;
  * @version 1.0
  */
 public class HomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,IFavouriteMedia {
 
     /**
      * Activity Home Binding for initializing the layout as data binding.
@@ -44,6 +45,7 @@ public class HomeActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         activityHomeBinding = DataBindingUtil.setContentView(this, R.layout.activity_home);
 
+        activityHomeBinding.coinCount.getText().toString();
         setSupportActionBar(activityHomeBinding.toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
 
@@ -110,22 +112,6 @@ public class HomeActivity extends AppCompatActivity
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        /**
-         * Handle action bar item clicks here.
-         * The action bar will automatically handle clicks on the Home/Up button,
-         * So long as you specify a parent activity in AndroidManifest.xml.
-         */
-        int i = item.getItemId();
-        if (i == android.R.id.home) {
-            activityHomeBinding.drawerLayout.openDrawer(GravityCompat.START);
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         /**
          *Handle navigation view item clicks here
@@ -152,7 +138,7 @@ public class HomeActivity extends AppCompatActivity
          *  Condition checks for Fragment to be replaced
          */
         if (itemId == R.id.nav_getcoins) {
-            fragment = new HomepageFragment();
+            fragment = HomepageFragment.newInstance(this);
             fragmentName = Constants.NAME_NAVIGATION_GET_COINS;
         } else if (itemId == R.id.nav_promotions) {
             fragmentName = Constants.NAME_NAVIGATION_PROMOTIONS;
@@ -176,6 +162,22 @@ public class HomeActivity extends AppCompatActivity
         activityHomeBinding.drawerLayout.closeDrawer(GravityCompat.START);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        /**
+         * Handle action bar item clicks here.
+         * The action bar will automatically handle clicks on the Home/Up button,
+         * So long as you specify a parent activity in AndroidManifest.xml.
+         */
+        int i = item.getItemId();
+        if (i == android.R.id.home) {
+            activityHomeBinding.drawerLayout.openDrawer(GravityCompat.START);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     /**
      * Method used for handle onBackPressed.
      */
@@ -189,5 +191,17 @@ public class HomeActivity extends AppCompatActivity
              */
             finishAffinity();
         }
+    }
+
+    /**
+     * To increase the coins count in the menu
+     */
+    @Override
+    public void favouriteOnClick() {
+        int coinsValue;
+        String coins = activityHomeBinding.coinCount.getText().toString();
+        coinsValue = Integer.parseInt(coins);
+        coinsValue++;
+        activityHomeBinding.coinCount.setText(String.valueOf(coinsValue));
     }
 }

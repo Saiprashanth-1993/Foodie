@@ -17,7 +17,6 @@ import android.widget.TextView;
 
 import profoodies.com.profoodies.R;
 
-
 /**
  * This is the adapter class used to load the images about the ProFoodies app. This is the
  * GetStarted slides used to give a short description about the app and its usage to the users as
@@ -75,11 +74,6 @@ public class GetStartedAdapter extends PagerAdapter {
         return mResources.length;
     }
 
-    @Override
-    public boolean isViewFromObject(View view, Object object) {
-        return view == object;
-    }
-
     /**
      * To instantiate the item
      *
@@ -112,5 +106,10 @@ public class GetStartedAdapter extends PagerAdapter {
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((RelativeLayout) object);
+    }
+
+    @Override
+    public boolean isViewFromObject(View view, Object object) {
+        return view == object;
     }
 }

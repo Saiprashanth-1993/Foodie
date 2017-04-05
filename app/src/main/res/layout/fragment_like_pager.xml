@@ -27,8 +27,8 @@
             <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:overScrollMode="never"
                 android:fillViewport="true"
+                android:overScrollMode="never"
                 android:scrollbars="none">
 
                 <RelativeLayout
@@ -39,8 +39,8 @@
                         android:id="@+id/burger"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:scaleType="fitXY"
                         android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
                         android:src="@drawable/burger" />
 
                     <android.support.v7.widget.AppCompatTextView

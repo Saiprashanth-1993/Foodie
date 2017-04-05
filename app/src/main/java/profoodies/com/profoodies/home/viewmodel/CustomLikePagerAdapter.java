@@ -45,16 +45,9 @@ public class CustomLikePagerAdapter extends PagerAdapter {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
-    @Override
-    public Object instantiateItem(ViewGroup container, final int position) {
-        inflater = LayoutInflater.from(context);
-        ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.fragment_like_pager, container, false);
-        container.addView(layout);
-        return layout;
-    }
-
     /**
      * To return number of pages in the pager
+     *
      * @return 20
      */
     @Override
@@ -63,13 +56,21 @@ public class CustomLikePagerAdapter extends PagerAdapter {
     }
 
     @Override
-    public boolean isViewFromObject(View view, Object object) {
-        return view == object;
+    public Object instantiateItem(ViewGroup container, final int position) {
+        inflater = LayoutInflater.from(context);
+        ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.fragment_like_pager, container, false);
+        container.addView(layout);
+        return layout;
     }
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((RelativeLayout) object);
+    }
+
+    @Override
+    public boolean isViewFromObject(View view, Object object) {
+        return view == object;
     }
 
 }

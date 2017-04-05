@@ -124,6 +124,16 @@ public class HomePageController {
     }
 
     /**
+     * Get position of the Like items in view pager
+     *
+     * @param i Position
+     * @return Next position
+     */
+    private int getLikeItem(int i) {
+        return fragmentLikeBinding.viewpager.getCurrentItem() + i;
+    }
+
+    /**
      * Trigger the event listener action for  profile edit button.
      *
      * @param followStatus Get the model of Follow Fragment
@@ -171,16 +181,5 @@ public class HomePageController {
      */
     private int getFollowItem(int i) {
         return fragmentFollowBinding.pager.getCurrentItem() + i;
-    }
-
-
-    /**
-     * Get position of the Like items in view pager
-     *
-     * @param i Position
-     * @return Next position
-     */
-    private int getLikeItem(int i) {
-        return fragmentLikeBinding.viewpager.getCurrentItem() + i;
     }
 }

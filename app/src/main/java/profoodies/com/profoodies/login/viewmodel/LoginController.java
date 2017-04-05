@@ -69,6 +69,36 @@ public class LoginController {
     }
 
     /**
+     * Method used to validate the username and password.
+     *
+     * @param view      Used to show the Snack Bar
+     * @param userEmail Validate the userEmail.
+     * @param password  Validate the password.
+     * @return true when the given field is not empty.
+     */
+    public boolean isValid(View view, String userEmail, String password) {
+        boolean validationStatus = true;
+        if (TextUtils.isEmpty(userEmail)) {
+            validationStatus = false;
+            CustomUtils.showSnack(view, context.getString(R.string.username_empty));
+            activityLoginBinding.etUsername.requestFocus();
+        } else if (TextUtils.isEmpty(password)) {
+            validationStatus = false;
+            CustomUtils.showSnack(view, context.getString(R.string.password_empty));
+            activityLoginBinding.etPassword.requestFocus();
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()) {
+            validationStatus = false;
+            CustomUtils.showSnack(view, context.getString(R.string.error_email));
+            activityLoginBinding.etUsername.requestFocus();
+        } else if (password.length() < 6) {
+            validationStatus = false;
+            CustomUtils.showSnack(view, context.getString(R.string.error_password));
+            activityLoginBinding.etPassword.requestFocus();
+        }
+        return validationStatus;
+    }
+
+    /**
      * OnClick listener of login layout to hide soft keyboard.
      *
      * @return OnClickListener of the login button.
@@ -115,35 +145,5 @@ public class LoginController {
 
             }
         };
-    }
-
-    /**
-     * Method used to validate the username and password.
-     *
-     * @param view      Used to show the Snack Bar
-     * @param userEmail Validate the userEmail.
-     * @param password  Validate the password.
-     * @return true when the given field is not empty.
-     */
-    public boolean isValid(View view, String userEmail, String password) {
-        boolean validationStatus = true;
-        if (TextUtils.isEmpty(userEmail)) {
-            validationStatus = false;
-            CustomUtils.showSnack(view, context.getString(R.string.username_empty));
-            activityLoginBinding.etUsername.requestFocus();
-        } else if (TextUtils.isEmpty(password)) {
-            validationStatus = false;
-            CustomUtils.showSnack(view, context.getString(R.string.password_empty));
-            activityLoginBinding.etPassword.requestFocus();
-        } else if (!Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()) {
-            validationStatus = false;
-            CustomUtils.showSnack(view, context.getString(R.string.error_email));
-            activityLoginBinding.etUsername.requestFocus();
-        } else if (password.length() < 6) {
-            validationStatus = false;
-            CustomUtils.showSnack(view, context.getString(R.string.error_password));
-            activityLoginBinding.etPassword.requestFocus();
-        }
-        return validationStatus;
     }
 }

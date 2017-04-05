@@ -9,13 +9,11 @@ package profoodies.com.profoodies.home.model;
 import android.databinding.BaseObservable;
 
 /**
- *
- *
  * @author ContusTeam <developers@contus.in>
  * @version 1.0
  */
 
-public class HomePageModel extends BaseObservable{
+public class HomePageModel extends BaseObservable {
     /**
      * unused model class for homepage fragment
      */

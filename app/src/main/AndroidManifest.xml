@@ -19,7 +19,7 @@
             android:name=".login.view.ActivityLogin"
             android:screenOrientation="portrait"
             android:theme="@style/noActionBarLight"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".home.view.HomeActivity"
             android:label="@string/title_activity_home"

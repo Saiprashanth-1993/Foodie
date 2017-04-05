@@ -11,10 +11,9 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,20 +30,30 @@ import profoodies.com.profoodies.interfaces.IFavouriteMedia;
  * @author ContusTeam <developers@contus.in>
  * @version 1.0
  */
-public class HomepageFragment extends Fragment implements IFavouriteMedia {
+public class HomepageFragment extends Fragment {
+
+    private static IFavouriteMedia favouriteListener;
 
     /**
      * To get the menu
      */
-    Menu menu;
+    TextView coinsCount;
 
     /**
      * MVVM Homepage fragment binding
      */
     private FragmentHomepageBinding homepageBinding;
 
-    public HomepageFragment() {
-        // Required empty public constructor
+    /**
+     * Constructor to initiate the instance
+     *
+     * @param favourite
+     * @return
+     */
+    public static HomepageFragment newInstance(IFavouriteMedia favourite) {
+        HomepageFragment homepageFragment = new HomepageFragment();
+        favouriteListener = favourite;
+        return homepageFragment;
     }
 
     @Override
@@ -56,15 +65,6 @@ public class HomepageFragment extends Fragment implements IFavouriteMedia {
         setHasOptionsMenu(true);
         return homepageBinding.getRoot();
     }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-
-        this.menu = menu;
-        inflater.inflate(R.menu.coins_counter, menu);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
 
     /**
      * Set up the Like fragment and Follow fragment in the tab
@@ -84,22 +84,11 @@ public class HomepageFragment extends Fragment implements IFavouriteMedia {
          * Add the fragment as a list.
          */
         List<Fragment> fragmentList = new ArrayList<>();
-        LikeFragment likeFragment = LikeFragment.newInstance(this);
-        FollowFragment followFragment = FollowFragment.newInstance(this);
+        LikeFragment likeFragment = LikeFragment.newInstance(favouriteListener);
+        FollowFragment followFragment = FollowFragment.newInstance(favouriteListener);
         fragmentList.add(likeFragment);
         fragmentList.add(followFragment);
         return fragmentList;
     }
 
-    /**
-     * To increase the coins count in the menu
-     */
-    @Override
-    public void favouriteOnClick() {
-        int coinsValue;
-        String coins = menu.getItem(0).getTitle().toString();
-        coinsValue = Integer.parseInt(coins);
-        coinsValue++;
-        menu.getItem(0).setTitle(String.valueOf(coinsValue));
-    }
 }

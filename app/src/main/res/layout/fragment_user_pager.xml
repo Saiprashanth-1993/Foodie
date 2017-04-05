@@ -14,11 +14,11 @@
             android:layout_width="match_parent"
             android:layout_height="360dp"
             android:layout_alignTop="@+id/name"
-            android:clickable="true"
-            android:layout_marginRight="2dp"
             android:layout_marginEnd="2dp"
             android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
             android:layout_marginStart="2dp"
+            android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardCornerRadius="3dp"
             app:cardMaxElevation="10dp">
@@ -33,8 +33,8 @@
                     android:id="@+id/user"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
-                    android:scaleType="fitXY"
                     android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
                     android:src="@drawable/user_img" />
 
                 <android.support.v7.widget.AppCompatTextView
@@ -54,8 +54,8 @@
                     android:layout_below="@id/user"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="17dp"
-                    android:drawablePadding="5dp"
                     android:drawableLeft="@drawable/ic_arrow_gray"
+                    android:drawablePadding="5dp"
                     android:text="Followers"
                     android:textColor="@android:color/darker_gray" />
             </RelativeLayout>

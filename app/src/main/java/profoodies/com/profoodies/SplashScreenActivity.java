@@ -23,6 +23,7 @@ import profoodies.com.profoodies.login.view.ActivityLogin;
  */
 
 public class SplashScreenActivity extends AppCompatActivity {
+
     /**
      * Used to handle the runnable thread.
      */
@@ -37,7 +38,6 @@ public class SplashScreenActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         threadHandler = new Handler();
         mRunnable = new Runnable() {
             @Override
@@ -47,6 +47,15 @@ public class SplashScreenActivity extends AppCompatActivity {
                 finish();
             }
         };
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        /**
+         * Stopping the handler when application minimized.
+         */
+        threadHandler.removeCallbacks(mRunnable);
     }
 
     @Override
@@ -60,14 +69,5 @@ public class SplashScreenActivity extends AppCompatActivity {
          * Resume the handler to run the thread when application reopen.
          */
         threadHandler.postDelayed(mRunnable, splashTimeOut);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        /**
-         * Stopping the handler when application minimized.
-         */
-        threadHandler.removeCallbacks(mRunnable);
     }
 }

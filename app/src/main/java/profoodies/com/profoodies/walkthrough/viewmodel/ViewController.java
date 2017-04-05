@@ -57,6 +57,16 @@ public class ViewController {
     }
 
     /**
+     * Skip to the login page
+     *
+     * @param context reference to Activity
+     */
+    public void skip(Context context) {
+        Intent intent = new Intent(context, HomeActivity.class);
+        context.startActivity(intent);
+    }
+
+    /**
      * Function for Continue Button Click, after finishing Walk through Screen, goes to Login Screen
      *
      * @return onclick Listener action
@@ -96,16 +106,5 @@ public class ViewController {
      */
     private int getItem(int i) {
         return activityGetstartedBinding.viewPager.getCurrentItem() + i;
-    }
-
-
-    /**
-     * Skip to the login page
-     *
-     * @param context reference to Activity
-     */
-    public void skip(Context context) {
-        Intent intent = new Intent(context, HomeActivity.class);
-        context.startActivity(intent);
     }
 }

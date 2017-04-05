@@ -46,6 +46,20 @@ public class NonSwipeableViewPager extends ViewPager {
     }
 
     /**
+     * To Set up the View Pager with scroll bar
+     */
+    private void setMyScroller() {
+        try {
+            Class<?> viewpager = ViewPager.class;
+            Field scroller = viewpager.getDeclaredField("mScroller");
+            scroller.setAccessible(true);
+            scroller.set(this, new MyScroller(getContext()));
+        } catch (Exception e) {
+            Log.e("TAG", "setMyScroller: " + e);
+        }
+    }
+
+    /**
      * Never allow swiping to switch between pages
      *
      * @param event To Captures the Motion Event
@@ -65,20 +79,6 @@ public class NonSwipeableViewPager extends ViewPager {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         return false;
-    }
-
-    /**
-     * To Set up the View Pager with scroll bar
-     */
-    private void setMyScroller() {
-        try {
-            Class<?> viewpager = ViewPager.class;
-            Field scroller = viewpager.getDeclaredField("mScroller");
-            scroller.setAccessible(true);
-            scroller.set(this, new MyScroller(getContext()));
-        } catch (Exception e) {
-            Log.e("TAG", "setMyScroller: " + e);
-        }
     }
 
     /**

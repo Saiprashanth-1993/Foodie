@@ -55,11 +55,6 @@ public class CustomFollowAdapter extends PagerAdapter {
         return 20;
     }
 
-    @Override
-    public boolean isViewFromObject(View view, Object object) {
-        return view == object;
-    }
-
     /**
      * To instantiate the view item
      *
@@ -78,6 +73,11 @@ public class CustomFollowAdapter extends PagerAdapter {
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((RelativeLayout) object);
+    }
+
+    @Override
+    public boolean isViewFromObject(View view, Object object) {
+        return view == object;
     }
 
 }
