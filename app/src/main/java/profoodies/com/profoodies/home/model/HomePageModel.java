@@ -16,4 +16,7 @@ import android.databinding.BaseObservable;
  */
 
 public class HomePageModel extends BaseObservable{
+    /**
+     * unused model class for homepage fragment
+     */
 }

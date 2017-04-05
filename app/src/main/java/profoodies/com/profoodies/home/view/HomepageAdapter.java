@@ -61,16 +61,33 @@ public class HomepageAdapter extends FragmentStatePagerAdapter {
         this.fragmentList = fragmentList;
     }
 
+    /**
+     * To get the item position
+     *
+     * @param position
+     * @return
+     */
     @Override
     public Fragment getItem(int position) {
         return fragmentList.get(position);
     }
 
+    /**
+     * To get the count
+     *
+     * @return
+     */
     @Override
     public int getCount() {
         return mTitle.length;
     }
 
+    /**
+     * To get the page title
+     *
+     * @param position
+     * @return
+     */
     @Override
     public CharSequence getPageTitle(int position) {
         return mTitle[position];

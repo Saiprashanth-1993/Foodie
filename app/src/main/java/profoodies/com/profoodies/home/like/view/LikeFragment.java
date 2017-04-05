@@ -64,6 +64,8 @@ public class LikeFragment extends Fragment {
     }
 
     /**
+     * Once view is inflated the funtionality is implemented
+     *
      * @param view
      * @param savedInstanceState
      */

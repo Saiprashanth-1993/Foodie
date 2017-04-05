@@ -61,6 +61,12 @@ public class FollowFragment extends Fragment {
         return fragmentFollowBinding.getRoot();
     }
 
+    /**
+     *Once view is inflated the funtionality is implemented
+     *
+     * @param view
+     * @param savedInstanceState
+     */
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
