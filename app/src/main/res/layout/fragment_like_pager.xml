@@ -24,7 +24,7 @@
             app:cardCornerRadius="3dp"
             app:cardMaxElevation="10dp">
 
-            <ScrollView
+            <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:overScrollMode="never"
@@ -91,7 +91,7 @@
                         android:text="#professionalchefs #pastrylife \n #deicious #colors #patisseries #foodlover #profoodies \n #cheflife #burgerking #foodies #dailyfood #colorfullife #professionalchefs #pastrylife \n #deicious #colors #patisseries #foodlover #profoodies \n #cheflife #burgerking #foodies #dailyfood #colorfullife"
                         android:textColor="@android:color/darker_gray" />
                 </RelativeLayout>
-            </ScrollView>
+            </android.support.v4.widget.NestedScrollView>
         </android.support.v7.widget.CardView>
     </LinearLayout>
 </RelativeLayout>
