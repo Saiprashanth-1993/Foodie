@@ -23,10 +23,6 @@ import profoodies.com.profoodies.R;
 
 public class UserPagerFragment extends Fragment {
 
-    public UserPagerFragment() {
-        // Required empty public constructor
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

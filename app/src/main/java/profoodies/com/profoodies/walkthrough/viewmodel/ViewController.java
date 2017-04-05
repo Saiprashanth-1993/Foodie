@@ -11,7 +11,7 @@ import android.content.Intent;
 import android.view.View;
 
 import profoodies.com.profoodies.databinding.ActivityGetstartedBinding;
-import profoodies.com.profoodies.login.view.ActivityLogin;
+import profoodies.com.profoodies.home.view.HomeActivity;
 
 /**
  * The Controller Class for the Walk Through Screen, which Handles skip, next , continue Btn Clicks
@@ -105,7 +105,7 @@ public class ViewController {
      * @param context reference to Activity
      */
     public void skip(Context context) {
-        Intent intent = new Intent(context, ActivityLogin.class);
+        Intent intent = new Intent(context, HomeActivity.class);
         context.startActivity(intent);
     }
 }
