@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -21,6 +23,7 @@ import profoodies.com.profoodies.R;
 import profoodies.com.profoodies.databinding.FragmentHomepageBinding;
 import profoodies.com.profoodies.home.follow.view.FollowFragment;
 import profoodies.com.profoodies.home.like.view.LikeFragment;
+import profoodies.com.profoodies.interfaces.IFavouriteMedia;
 
 /**
  * Fragment to merge like fragment and follow fragment
@@ -28,7 +31,9 @@ import profoodies.com.profoodies.home.like.view.LikeFragment;
  * @author ContusTeam <developers@contus.in>
  * @version 1.0
  */
-public class HomepageFragment extends Fragment {
+public class HomepageFragment extends Fragment implements IFavouriteMedia {
+
+    Menu menu;
 
     private FragmentHomepageBinding homepageBinding;
 
@@ -44,8 +49,16 @@ public class HomepageFragment extends Fragment {
         setTabs();
         setHasOptionsMenu(true);
         return homepageBinding.getRoot();
-
     }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+
+        this.menu = menu;
+        inflater.inflate(R.menu.coins_counter, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
 
     /**
      * Set up the Like fragment and Follow fragment in the tab
@@ -61,15 +74,26 @@ public class HomepageFragment extends Fragment {
     }
 
     private List<Fragment> getFragmentList() {
-
         /**
          * Add the fragment as a list.
          */
         List<Fragment> fragmentList = new ArrayList<>();
-        LikeFragment likeFragment = new LikeFragment();
-        FollowFragment followFragment = new FollowFragment();
+        LikeFragment likeFragment = LikeFragment.newInstance(this);
+        FollowFragment followFragment = FollowFragment.newInstance(this);
         fragmentList.add(likeFragment);
         fragmentList.add(followFragment);
         return fragmentList;
+    }
+
+    /**
+     * To increase the coins count in the menu
+     */
+    @Override
+    public void favouriteOnClick() {
+        int coinsValue;
+        String coins = menu.getItem(0).getTitle().toString();
+        coinsValue = Integer.parseInt(coins);
+        coinsValue++;
+        menu.getItem(0).setTitle(String.valueOf(coinsValue));
     }
 }

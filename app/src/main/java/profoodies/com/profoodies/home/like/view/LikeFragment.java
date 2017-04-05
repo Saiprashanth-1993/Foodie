@@ -7,6 +7,7 @@
 package profoodies.com.profoodies.home.like.view;
 
 import android.databinding.DataBindingUtil;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -17,7 +18,10 @@ import android.view.ViewGroup;
 import profoodies.com.profoodies.R;
 import profoodies.com.profoodies.databinding.FragmentLikeBinding;
 import profoodies.com.profoodies.home.like.model.LikedStatus;
+import profoodies.com.profoodies.home.viewmodel.CustomLikePagerAdapter;
 import profoodies.com.profoodies.home.viewmodel.HomePageController;
+import profoodies.com.profoodies.home.viewmodel.SingleSideSwipeableViewPager;
+import profoodies.com.profoodies.interfaces.IFavouriteMedia;
 import xyz.hanks.library.SmallBang;
 
 /**
@@ -29,9 +33,25 @@ import xyz.hanks.library.SmallBang;
 
 public class LikeFragment extends Fragment {
 
+    private static IFavouriteMedia favouriteMedia;
+
     FragmentLikeBinding fragmentLikeBinding;
 
     SmallBang smallBang;
+
+    Typeface typeface;
+
+    /**
+     * Constructor to initiate the instance
+     *
+     * @param favourite
+     * @return
+     */
+    public static LikeFragment newInstance(IFavouriteMedia favourite) {
+        LikeFragment likeFragment = new LikeFragment();
+        favouriteMedia = favourite;
+        return likeFragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,15 +61,22 @@ public class LikeFragment extends Fragment {
         smallBang = SmallBang.attach2Window(getActivity());
 
         return fragmentLikeBinding.getRoot();
-
-
     }
 
+    /**
+     * @param view
+     * @param savedInstanceState
+     */
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        fragmentLikeBinding.setViewController(new HomePageController(smallBang));
-        fragmentLikeBinding.setLikedStatus(new LikedStatus());
+        fragmentLikeBinding.viewpager.setAllowedSwipeDirection(SingleSideSwipeableViewPager.SwipeDirection.RIGHT);
+        fragmentLikeBinding
+                .setViewController(new HomePageController(smallBang, fragmentLikeBinding, favouriteMedia));
+        fragmentLikeBinding.setLikeStatus(new LikedStatus());
+        fragmentLikeBinding.name.setTypeface(typeface);
+        CustomLikePagerAdapter customLikeAdapter = new CustomLikePagerAdapter(getContext());
+        fragmentLikeBinding.viewpager.setAdapter(customLikeAdapter);
     }
 }
 

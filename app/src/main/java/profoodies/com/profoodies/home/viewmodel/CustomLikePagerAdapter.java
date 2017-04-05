@@ -11,7 +11,7 @@ import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import profoodies.com.profoodies.R;
 
@@ -22,31 +22,38 @@ import profoodies.com.profoodies.R;
  * @version 1.0
  */
 
-public class CustomAdapter extends PagerAdapter {
+public class CustomLikePagerAdapter extends PagerAdapter {
 
-    Context context;
+    private Context context;
 
-    LayoutInflater inflater;
+    private LayoutInflater inflater;
 
     /**
      * Constructor of Custom Adapter which can invoke the method directly to activity
      *
      * @param context
      */
-    public CustomAdapter(Context context) {
+    public CustomLikePagerAdapter(Context context) {
         this.context = context;
         inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
+    @Override
+    public Object instantiateItem(ViewGroup container, final int position) {
+        inflater = LayoutInflater.from(context);
+        ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.fragment_like_pager, container, false);
+        container.addView(layout);
+        return layout;
+    }
+
     /**
      * To return number of pages in the pager
-     *
-     * @return count value
+     * @return
      */
     @Override
     public int getCount() {
-        return 5;
+        return 20;
     }
 
     @Override
@@ -55,16 +62,8 @@ public class CustomAdapter extends PagerAdapter {
     }
 
     @Override
-    public Object instantiateItem(ViewGroup container, final int position) {
-        inflater = LayoutInflater.from(context);
-        ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.fragment_pager, container, false);
-        container.addView(layout);
-        return layout;
-    }
-
-    @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        container.removeView((LinearLayout) object);
+        container.removeView((RelativeLayout) object);
     }
 
 }

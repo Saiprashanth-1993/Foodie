@@ -10,7 +10,6 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +17,10 @@ import android.view.ViewGroup;
 import profoodies.com.profoodies.R;
 import profoodies.com.profoodies.databinding.FragmentFollowBinding;
 import profoodies.com.profoodies.home.follow.model.FollowStatus;
-import profoodies.com.profoodies.home.viewmodel.CustomAdapter;
+import profoodies.com.profoodies.home.viewmodel.CustomFollowAdapter;
 import profoodies.com.profoodies.home.viewmodel.HomePageController;
+import profoodies.com.profoodies.home.viewmodel.SingleSideSwipeableViewPager;
+import profoodies.com.profoodies.interfaces.IFavouriteMedia;
 import xyz.hanks.library.SmallBang;
 
 /**
@@ -30,15 +31,25 @@ import xyz.hanks.library.SmallBang;
  */
 public class FollowFragment extends Fragment {
 
+    private static IFavouriteMedia favouriteMedia;
     /**
      * Activity FollowFragment Binding for initializing the layout as data binding.
      */
+
     FragmentFollowBinding fragmentFollowBinding;
 
     SmallBang smallBang;
 
-    public FollowFragment() {
-        // Required empty public constructor
+    /**
+     * Constructor to initiate the instance
+     *
+     * @param favourite
+     * @return
+     */
+    public static FollowFragment newInstance(IFavouriteMedia favourite) {
+        FollowFragment followFragment = new FollowFragment();
+        favouriteMedia = favourite;
+        return followFragment;
     }
 
     @Override
@@ -53,10 +64,12 @@ public class FollowFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ViewPager pager = (ViewPager) view.findViewById(R.id.pager);
-        fragmentFollowBinding.setViewController(new HomePageController(smallBang));
+        fragmentFollowBinding.pager.setAllowedSwipeDirection(SingleSideSwipeableViewPager.SwipeDirection.RIGHT);
+        fragmentFollowBinding
+                .setViewController(new HomePageController(smallBang, fragmentFollowBinding,favouriteMedia));
         fragmentFollowBinding.setFollowStatus(new FollowStatus());
-        CustomAdapter customAdapter = new CustomAdapter(getContext());
-        pager.setAdapter(customAdapter);
+        CustomFollowAdapter customFollowAdapter = new CustomFollowAdapter(getContext());
+        fragmentFollowBinding.pager.setAdapter(customFollowAdapter);
     }
+
 }

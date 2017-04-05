@@ -8,12 +8,12 @@ package profoodies.com.profoodies.home.model;
 
 import android.databinding.BaseObservable;
 
-
 /**
- * Model Class For HomePageModel to set the Data
+ *
  *
  * @author ContusTeam <developers@contus.in>
  * @version 1.0
  */
+
 public class HomePageModel extends BaseObservable{
 }

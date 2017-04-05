@@ -13,7 +13,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import java.util.List;
 
 /**
- * Adapter Class for Binding Like,Follow Fragments inside home
+ * Adapter class for Binding Like, Follow Fragments inside Home
  *
  * @author ContusTeam <developers@contus.in>
  * @version 1.0
@@ -25,17 +25,18 @@ public class HomepageAdapter extends FragmentStatePagerAdapter {
      * Title of the fragment list.
      */
     private String[] mTitle;
-
     /**
      * Fragment list Which contains the fragments on the adapter.
      */
+
     private List<Fragment> fragmentList;
 
     /**
      * Instantiates a new adapter dashboard view.
      *
-     * @param fm the Instance of the FragmentManager.
+     * @param fm Instance of the FragmentManager.
      */
+
     public HomepageAdapter(FragmentManager fm) {
         super(fm);
     }
@@ -45,6 +46,7 @@ public class HomepageAdapter extends FragmentStatePagerAdapter {
      *
      * @param titles Title list.
      */
+
     public void setTitle(String[] titles) {
         this.mTitle = titles;
     }
@@ -54,6 +56,7 @@ public class HomepageAdapter extends FragmentStatePagerAdapter {
      *
      * @param fragmentList List of fragment.
      */
+
     public void setFragmentList(List<Fragment> fragmentList) {
         this.fragmentList = fragmentList;
     }
