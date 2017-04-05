@@ -60,6 +60,13 @@ public class CustomFollowAdapter extends PagerAdapter {
         return view == object;
     }
 
+    /**
+     * To instantiate the view item
+     *
+     * @param container
+     * @param position
+     * @return item view
+     */
     @Override
     public Object instantiateItem(ViewGroup container, final int position) {
         inflater = LayoutInflater.from(context);

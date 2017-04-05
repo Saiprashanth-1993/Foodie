@@ -21,6 +21,9 @@ import profoodies.com.profoodies.BR;
 
 public class FollowStatus extends BaseObservable {
 
+    /**
+     * Boolean Variable is initialized
+     */
     private boolean isFollowed = false;
 
     @Bindable
