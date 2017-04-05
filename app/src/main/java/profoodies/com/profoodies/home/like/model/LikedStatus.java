@@ -21,6 +21,9 @@ import profoodies.com.profoodies.BR;
 
 public class LikedStatus extends BaseObservable {
 
+    /**
+     * Boolean Variable is initialized
+     */
     private boolean isLiked = false;
 
     @Bindable

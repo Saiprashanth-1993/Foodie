@@ -24,8 +24,14 @@ import profoodies.com.profoodies.R;
 
 public class CustomFollowAdapter extends PagerAdapter {
 
+    /**
+     * Gets the context of the Activity
+     */
     Context context;
 
+    /**
+     * To inflate the view inside the viewpager
+     */
     LayoutInflater inflater;
 
     /**

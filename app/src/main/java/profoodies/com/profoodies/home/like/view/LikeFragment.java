@@ -35,10 +35,19 @@ public class LikeFragment extends Fragment {
 
     private static IFavouriteMedia favouriteMedia;
 
+    /**
+     * MVVM fragment binding
+     */
     FragmentLikeBinding fragmentLikeBinding;
 
+    /**
+     * Used for animation effect
+     */
     SmallBang smallBang;
 
+    /**
+     * To set Typeface for the text
+     */
     Typeface typeface;
 
     /**

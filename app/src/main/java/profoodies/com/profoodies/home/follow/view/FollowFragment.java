@@ -52,6 +52,14 @@ public class FollowFragment extends Fragment {
         return followFragment;
     }
 
+    /**
+     * To inflate the view on the screen
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

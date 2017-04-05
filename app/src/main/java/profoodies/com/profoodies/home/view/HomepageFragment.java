@@ -33,8 +33,14 @@ import profoodies.com.profoodies.interfaces.IFavouriteMedia;
  */
 public class HomepageFragment extends Fragment implements IFavouriteMedia {
 
+    /**
+     * To get the menu
+     */
     Menu menu;
 
+    /**
+     * MVVM Homepage fragment binding
+     */
     private FragmentHomepageBinding homepageBinding;
 
     public HomepageFragment() {
