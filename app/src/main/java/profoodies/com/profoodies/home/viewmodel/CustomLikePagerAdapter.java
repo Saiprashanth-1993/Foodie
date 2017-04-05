@@ -24,6 +24,9 @@ import profoodies.com.profoodies.R;
 
 public class CustomLikePagerAdapter extends PagerAdapter {
 
+    /**
+     * Gets the context of the Fragment
+     */
     private Context context;
 
     private LayoutInflater inflater;

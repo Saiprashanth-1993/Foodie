@@ -21,8 +21,14 @@ import android.view.MotionEvent;
 
 public class SingleSideSwipeableViewPager extends ViewPager {
 
+    /**
+     * Gets the value of motion event
+     */
     private float initialXValue;
 
+    /**
+     * Gets the value from enum
+     */
     private SwipeDirection direction;
 
     /**

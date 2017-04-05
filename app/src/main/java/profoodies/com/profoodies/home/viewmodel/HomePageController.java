@@ -27,12 +27,24 @@ import xyz.hanks.library.SmallBangListener;
 
 public class HomePageController {
 
+    /**
+     * Used for Animation Effect
+     */
     SmallBang smallBang;
 
+    /**
+     * MVVM Fragment Follow Binding
+     */
     FragmentLikeBinding fragmentLikeBinding;
 
+    /**
+     * MVVM Fragment Follow Binding
+     */
     FragmentFollowBinding fragmentFollowBinding;
 
+    /**
+     * Gets the interface
+     */
     IFavouriteMedia favouriteMedia;
 
     /**

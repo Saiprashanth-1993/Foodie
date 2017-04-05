@@ -35,6 +35,9 @@ public class LoginController {
      */
     ActivityLoginBinding activityLoginBinding;
 
+    /**
+     * Gets the Context
+     */
     private Context context;
 
     /**
