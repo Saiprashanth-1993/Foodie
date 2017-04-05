@@ -29,6 +29,9 @@ public class CustomLikePagerAdapter extends PagerAdapter {
      */
     private Context context;
 
+    /**
+     * Gets the inflater of the fragment
+     */
     private LayoutInflater inflater;
 
     /**

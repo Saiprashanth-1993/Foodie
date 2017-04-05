@@ -65,7 +65,7 @@ public class HomepageAdapter extends FragmentStatePagerAdapter {
      * To get the item position
      *
      * @param position
-     * @return
+     * @return List Position
      */
     @Override
     public Fragment getItem(int position) {
@@ -75,7 +75,7 @@ public class HomepageAdapter extends FragmentStatePagerAdapter {
     /**
      * To get the count
      *
-     * @return
+     * @return length
      */
     @Override
     public int getCount() {
@@ -86,7 +86,7 @@ public class HomepageAdapter extends FragmentStatePagerAdapter {
      * To get the page title
      *
      * @param position
-     * @return
+     * @return Title position
      */
     @Override
     public CharSequence getPageTitle(int position) {

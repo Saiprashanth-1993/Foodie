@@ -48,7 +48,7 @@ public class CustomFollowAdapter extends PagerAdapter {
     /**
      * To return number of pages in the pager
      *
-     * @return
+     * @return 20
      */
     @Override
     public int getCount() {

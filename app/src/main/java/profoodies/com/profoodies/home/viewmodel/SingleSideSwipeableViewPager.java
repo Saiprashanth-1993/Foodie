@@ -54,6 +54,12 @@ public class SingleSideSwipeableViewPager extends ViewPager {
 
     }
 
+    /**
+     * Method used to allow swipe in single direction
+     *
+     * @param event
+     * @return
+     */
     private boolean isSwipeAllowed(MotionEvent event) {
         if (this.direction == SwipeDirection.ALL)
             return true;
