@@ -95,6 +95,15 @@ public class NonSwipeableViewPager extends ViewPager {
             super(context, new DecelerateInterpolator());
         }
 
+        /**
+         * To set smooth scrolling transition
+         *
+         * @param startX
+         * @param startY
+         * @param dx
+         * @param dy
+         * @param duration
+         */
         @Override
         public void startScroll(int startX, int startY, int dx, int dy, int duration) {
             super.startScroll(startX, startY, dx, dy, 250 /*1 secs*/);

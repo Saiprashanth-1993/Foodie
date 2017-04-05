@@ -28,6 +28,9 @@ import profoodies.com.profoodies.login.viewmodel.LoginController;
  */
 public class ActivityLogin extends AppCompatActivity {
 
+    /**
+     * MVVM for the LoginActivity Databinding
+     */
     ActivityLoginBinding activityLoginBinding;
 
     @Override

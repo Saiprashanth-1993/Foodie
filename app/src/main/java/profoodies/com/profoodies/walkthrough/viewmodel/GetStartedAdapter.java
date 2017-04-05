@@ -80,6 +80,13 @@ public class GetStartedAdapter extends PagerAdapter {
         return view == object;
     }
 
+    /**
+     * To instantiate the item
+     *
+     * @param container
+     * @param position
+     * @return itemview
+     */
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
 
