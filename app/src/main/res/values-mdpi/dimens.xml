@@ -23,4 +23,5 @@
     <dimen name="likeButton_marginTop">450dp</dimen>
     <dimen name="ChefNameMarginTop">2dp</dimen>
     <dimen name="Like_txt_MarginRight">93dp</dimen>
+    <dimen name="ic_favourite">15dp</dimen>
 </resources>

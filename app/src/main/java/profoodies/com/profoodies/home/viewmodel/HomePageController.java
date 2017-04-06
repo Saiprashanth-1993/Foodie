@@ -57,7 +57,7 @@ public class HomePageController {
      */
     public HomePageController(SmallBang smallBang, FragmentLikeBinding fragmentLikeBinding, IFavouriteMedia like) {
         /**
-         * here constructor is set to smallbang and fragment following using this keyword
+         * Here constructor is set to smallbang and fragment following using this keyword
          */
         this.favouriteMedia = like;
         this.smallBang = smallBang;
@@ -75,7 +75,7 @@ public class HomePageController {
     public HomePageController(SmallBang smallBang,
                               FragmentFollowBinding fragmentFollowBinding, IFavouriteMedia follow) {
         /**
-         * here constructor is set to smallbang and fragment following using this keyword
+         * Here constructor is set to smallbang and fragment following using this keyword
          */
         this.smallBang = smallBang;
         this.favouriteMedia = follow;
