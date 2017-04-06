@@ -88,7 +88,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="0dp"
-                        android:text="#professionalchefs #pastrylife \n #deicious #colors #patisseries #foodlover #profoodies \n #cheflife #burgerking #foodies #dailyfood #colorfullife #professionalchefs #pastrylife \n #deicious #colors #patisseries #foodlover #profoodies \n #cheflife #burgerking #foodies #dailyfood #colorfullife"
+                        android:text="#professionalchefs #pastrylife \n #deicious #colors #patisseries #foodlover #profoodies #cheflife #burgerking #foodies #dailyfood #colorfullife #professionalchefs #pastrylife #deicious #colors #patisseries #foodlover #profoodies #cheflife #burgerking #foodies #dailyfood #colorfullife"
                         android:textColor="@android:color/darker_gray" />
                 </RelativeLayout>
             </android.support.v4.widget.NestedScrollView>
